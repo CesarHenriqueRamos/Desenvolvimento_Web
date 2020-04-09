@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
+}
+.container{
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 2%;
+}
+div.logo{
+    width: 200px;
+    margin-top: 15px;
+    margin-left: 10px;
+    background-color: blue;
+}
+#logo{
+    font-size: 45px;
+    text-shadow: 15px 15px 7px;
+}
