@@ -9,13 +9,43 @@
     max-width: 1200px;
     padding: 0 2%;
 }
+.clear{
+    clear: both;
+}
 div.logo{
-    width: 200px;
+    width: 150px;
     margin-top: 15px;
-    margin-left: 10px;
-    background-color: blue;
+    margin-left: 20px;
+  
+    float: left;
 }
 #logo{
     font-size: 45px;
     text-shadow: 15px 15px 7px;
+    font-weight: 400;
+}
+nav{
+    float: right;
+    width: 280px;
+    margin-top: 25px;
+    margin-right: 10px;
+   
+}
+nav ul{
+    float: right;
+    text-align: center;
+}
+nav ul li{
+    width: 120px;
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px;
+    margin-left: 10px;
+    background-color: rgb(98, 98, 236);
+    border-radius: 20px;
+}
+nav li a{
+    text-align: center;
+    text-decoration: none;
+    color: white;
 }
