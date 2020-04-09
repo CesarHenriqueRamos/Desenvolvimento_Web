@@ -4,6 +4,11 @@
     box-sizing: border-box;
     font-family: 'Roboto Slab', serif;
 }
+
+body,html{
+    height: 100%;
+    background-color: #90caf9;
+}
 .container{
     width: 100%;
     max-width: 1200px;
@@ -12,17 +17,19 @@
 .clear{
     clear: both;
 }
+/*home*/
 div.logo{
     width: 150px;
     margin-top: 15px;
     margin-left: 20px;
-  
+    
     float: left;
 }
 #logo{
     font-size: 45px;
     text-shadow: 15px 15px 7px;
     font-weight: 400;
+    color: white;
 }
 nav{
     float: right;
@@ -48,4 +55,37 @@ nav li a{
     text-align: center;
     text-decoration: none;
     color: white;
+}
+section{
+    height: 80%;
+}
+footer.footer2{
+    text-align: center;
+    background-color: #42a5f5;
+    padding: 15px;
+    color: white;
+}
+/*login*/
+form.login{
+    max-width: 600px;
+    background-color: #42a5f5;
+    padding: 20px;
+    position: relative;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 20px;
+}
+form.login h2{
+    color: white;
+}
+form.login input{
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 0;
+    border-radius: 20px;
+}
+form.login input[type=submit]{
+    width: 150px;
 }
