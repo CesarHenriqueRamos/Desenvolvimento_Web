@@ -13,8 +13,4 @@
         </header>
         <section></section>
         
-        <footer class="footer2">
-            <h3>Todos Os Direitos Reservados</h3>
-        </footer>    
-</body>
-</html>
+        
