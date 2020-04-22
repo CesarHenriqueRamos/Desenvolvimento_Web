@@ -1,14 +1,12 @@
 <?php 
     include('Exemplo.class.php');
+    //instanciando 
+    $exemplo = new Exemplo();
+    //$exemplo->var2 = 'Cesar Henrique Ramos';
+    $exemplo->setVar1('Cesar');
+    echo $exemplo->pegaVar1();
+    //echo $exemplo->var2;
+    //echo '<hr>';
+    //estatico
+    //echo Exemplo::$var3;
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
