@@ -20,6 +20,9 @@ if(isset($_POST['acao'])){
     $sql->execute(array($nome,$sobrenome,$id));
     echo 'Atualisado com sucesso';
 }
+//no SQL
+//OR funciona como ou 
+//AND funciona como e
 ?>
 <!DOCTYPE html>
 <html lang="en">
