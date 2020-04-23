@@ -2,7 +2,7 @@
 date_default_timezone_set('America/Sao_Paulo');
 $pdo = new PDO('mysql:host=localhost;dbname=modulo_8','root','');
 //entrada de dados
-if(isset($_POST['acao'])){
+/*if(isset($_POST['acao'])){
     $nome = $_POST['nome'];
     $sobrenome = $_POST['sobrenome'];
     $data_hora = date('Y-m-d H:m:s');
@@ -10,6 +10,15 @@ if(isset($_POST['acao'])){
     $sql = $pdo->prepare("INSERT INTO `clientes` VALUE(null,?,?,?)");
     $sql->execute(array($nome,$sobrenome,$data_hora));
     echo 'Cliente Inserido com Sucesso';
+}*/
+//update
+if(isset($_POST['acao'])){
+    $id = 9;
+    $nome = $_POST['nome'];
+    $sobrenome = $_POST['sobrenome'];
+    $sql = $pdo->prepare('UPDATE `clientes` SET nome=?,sobrenome=? WHERE id=?');
+    $sql->execute(array($nome,$sobrenome,$id));
+    echo 'Atualisado com sucesso';
 }
 ?>
 <!DOCTYPE html>
