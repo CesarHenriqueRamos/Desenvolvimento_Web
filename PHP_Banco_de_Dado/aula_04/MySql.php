@@ -1,6 +1,8 @@
 <?php
 class MySql{
-    private $pdo;
+
+    private static $pdo;
+
     public static function connect(){
         if(self::$pdo == null){
             try{
@@ -14,4 +16,6 @@ class MySql{
         return self::$pdo;
     }
 }
+
+
 ?>
