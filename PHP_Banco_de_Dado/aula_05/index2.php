@@ -10,5 +10,6 @@ $pdo = new PDO('mysql:host=localhost;dbname=db_teste','root','');
 $sql = $pdo->prepare("SELECT * FROM `cargos` WHERE id IN (1,10)");
 //BETWEEN otimo para datas, para analisar um intervalo de data 
 $sql = $pdo->prepare("SELECT * FROM `cargos` WHERE data BETWEEN '2020-01-01' AND '2020-02-01'");
-
+//Subquery
+$sql = $pdo->prepare("SELECT * FROM `filme` WHERE `categoria_id` = (SELECT categoria_id FROM `categorias` WHERE nome = 'terror')");
 ?>
