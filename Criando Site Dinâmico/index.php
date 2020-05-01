@@ -13,7 +13,7 @@
 <body>
     <header>
         <div class="container">
-            <div class="logo">Logo Marca</div><!--logo-->
+            <div class="logo">Ramos Tecnolog</div><!--logo-->
             <nav class="desktop">
                 <ul>
                     <li><a href="">Home</a></li>

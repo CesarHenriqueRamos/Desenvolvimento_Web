@@ -36,7 +36,7 @@ header{
     font-size: 30px;
     font-weight: 300;
     text-transform: uppercase;
-    width: 250px;
+    width: 300px;
     float: left;
     color: white;
 }
@@ -110,6 +110,7 @@ nav.mobile a{
     padding: 0 2%;
     transform: translate(-50%,-50%);
     z-index: 2;
+    
 }
 section.banner-principal form h2{
     text-align: center;
@@ -118,15 +119,14 @@ section.banner-principal form h2{
     z-index: 2;
 }
 .banner-principal form input[type=email]{
-    width: 80%;
-    min-width: 400px;
+    width: 400px;
     padding: 10px 10px;
     border: 0;
     border-radius: 20px;
 }
 .banner-principal form input[type=submit]{
-    width: 15%;
-    min-width: 80px;
+    width: 80px;
+    
     padding: 10px 10px;
     border-radius: 20px;
     border: 0;
@@ -244,7 +244,7 @@ footer{
         width: 100%;
     }
     section.descricao-autor img{
-        margin: 0 23%;
+        max-width: 200px;
         border-radius: 50%;
         float: none !important;
     }
@@ -257,12 +257,24 @@ footer{
     .w33{
         width: 50%;
     }
+    .banner-principal form input[type=submit]{
+        width: 300px;
+        margin-top: 10px;
+        margin-left: 10%;
+    }
+    .banner-principal form input[type=email]{
+        width: 300px;
+        margin-top: 10px;
+        margin-left: 10%;
+    }
+    .banner-principal form{
+        max-width: 400px;
+        
+    }
 }
 @media screen and (max-width: 600px){
     
-    section.descricao-autor img{
-        margin: 0 18%;
-    }
+    
     .w33{
         width: 100%;
     }
