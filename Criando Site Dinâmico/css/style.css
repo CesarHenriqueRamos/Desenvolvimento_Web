@@ -167,6 +167,77 @@ section.descricao-autor img{
     float: right;
     border-radius: 10px;
 }
+/*especialidade*/
+section.especialidades{
+    background-color: #ccc;
+    padding: 15px 0;
+}
+section.especialidades h1{
+    text-align: center;
+    color:rgb(35, 10, 88);
+    font-size: 33px;
+    font-weight: 300;
+    padding-bottom: 15px;
+}
+section.especialidades h2{
+    text-align: center;
+    color:rgb(35, 10, 88);
+    font-size: 25px;
+    font-weight: 400;
+    padding: 10px 0;
+}
+section.especialidades h3{
+    text-align: center;
+    font-size: 30px;
+}
+section.especialidades h3 i{
+    background-color: #ccc;
+}
+section.especialidades p{
+    padding: 10px 15px;
+    color: #444;
+}
+/*extras*/
+section.extras{
+    padding: 15px 5px;
+}
+section.extras div.w50 h2{
+    padding-bottom: 10px;
+    text-align: center;
+    color: rgb(35, 10, 88);
+    font-size: 33px;
+    font-weight: 300;
+}
+section.extras div.w50 p{
+    padding: 10px 15px;
+    color: #444;
+    font-size: 18px;
+    font-weight: 300;
+}
+h3.depoimento-altor{
+    color: rgb(35, 10, 88);
+    font-size: 18px;
+    font-weight: 400;
+    padding-bottom: 10px;
+}
+.servicos{
+    padding: 10px 15px;
+}
+.servicos ul{
+    padding-left: 20px;
+}
+.servicos li{
+    padding-bottom: 8px;
+    color: rgb(35, 10, 88);
+    font-size: 20px;
+}
+/*footer*/
+footer{
+    background-color: rgb(35, 10, 88);
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+}
 /*expancivo*/
 @media screen and (max-width: 780px){
     .w50{
@@ -183,10 +254,16 @@ section.descricao-autor img{
     nav.mobile i{
         display: block;
     }
+    .w33{
+        width: 50%;
+    }
 }
 @media screen and (max-width: 600px){
     
     section.descricao-autor img{
         margin: 0 18%;
+    }
+    .w33{
+        width: 100%;
     }
 }
