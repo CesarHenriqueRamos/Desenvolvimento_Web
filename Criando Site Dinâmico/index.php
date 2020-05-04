@@ -8,9 +8,14 @@
     <meta name="author" content="Cesar Henrique Ramos">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <title>Site Dinamido</title>
 </head>
 <body>
+<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+<script>
+    $("body").alert('Teste');
+</script>
     <header>
         <div class="container">
             <div class="logo">Ramos Tecnolog</div><!--logo-->
