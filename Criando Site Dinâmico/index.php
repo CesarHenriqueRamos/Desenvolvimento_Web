@@ -12,10 +12,7 @@
     <title>Site Dinamido</title>
 </head>
 <body>
-<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
-<script>
-    $("body").alert('Teste');
-</script>
+
     <header>
         <div class="container">
             <div class="logo">Ramos Tecnolog</div><!--logo-->
@@ -115,5 +112,7 @@
         <p>Todos os Direitos Reservados</p>
     </footer><!--footer-->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
