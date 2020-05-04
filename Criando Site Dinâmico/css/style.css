@@ -38,6 +38,10 @@ header{
     text-transform: uppercase;
     width: 300px;
     float: left;
+    
+}
+.logo a{
+    text-decoration: none;
     color: white;
 }
 /*nav desktop*/
@@ -253,7 +257,10 @@ footer{
     }
     nav.mobile i{
         display: block;
+        color: white;
+       
     }
+
     .w33{
         width: 50%;
     }

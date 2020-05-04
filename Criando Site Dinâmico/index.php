@@ -15,7 +15,7 @@
 
     <header>
         <div class="container">
-            <div class="logo">Ramos Tecnolog</div><!--logo-->
+            <div class="logo"><a href="">Ramos Tecnolog</a></div><!--logo-->
             <nav class="desktop">
                 <ul>
                     <li><a href="">Home</a></li>
@@ -26,7 +26,7 @@
             </nav><!--nav desktop-->
             
             <nav class="mobile">
-                <i class="fas fa-bars"></i>
+                <div class="icon"><i class="fas fa-bars"></i></div>
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="">Sobre</a></li>
