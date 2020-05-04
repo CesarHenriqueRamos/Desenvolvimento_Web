@@ -13,7 +13,17 @@
     <title>Site Dinamido</title>
 </head>
 <body>
-
+    <?php
+        $url = isset( $_GET['url'])? $_GET['url'] : 'home';
+        switch($url){
+            case 'sobre':
+                echo '<target target="sobre"/>';
+            break;
+            case 'servico':
+                echo '<target target="servico">';
+            break;
+        }
+    ?>
     <header>
         <div class="container">
             <div class="logo"><a href="">Ramos Tecnolog</a></div><!--logo-->
@@ -39,11 +49,15 @@
         </div><!--container-->
     </header>
     <?php
-        $url = isset( $_GET['url'])? $_GET['url'] : 'home';
+        
         if(file_exists('pages/'.$url.'.php')){
             include('pages/'.$url.'.php');
         }else{
-            include('pages/404.php');
+            if($url != 'sobre' && $url != 'servicos'){
+                include('pages/404.php');
+            }else{
+                include("pages/home.php");
+            }            
         }
 
     ?>

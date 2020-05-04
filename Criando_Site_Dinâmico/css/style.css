@@ -259,6 +259,40 @@ section.erro {
     height: 400px;
 
 }
+.contato-container{
+    background-color: #5E3EA1;
+}
+form#contato{
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    margin: 0 auto;    
+}
+.contato-container h2{
+    text-align: center;
+    color: white;
+    padding: 15px 0;
+}
+form#contato input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: 0;
+}form#contato textarea{
+    width: 100%;
+    margin-bottom: 10px;
+    resize: none;
+    border-radius: 20px;
+    padding: 15px;
+}
+form#contato input[type=submit]{
+    width: 200px;
+   color: white;
+   background-color: rgb(35, 10, 88);
+   cursor: pointer;
+    
+}
 /*expancivo*/
 @media screen and (max-width: 780px){
     .w50{
