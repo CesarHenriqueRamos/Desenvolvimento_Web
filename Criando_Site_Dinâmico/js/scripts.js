@@ -20,4 +20,8 @@ $(function(){
             icon.addClass('fa-bars');
         }
     })
+    //scrou
+    if($('target').length > 0){
+        alert('o elemnto existe');
+    }
 })
