@@ -19,8 +19,8 @@
             case 'sobre':
                 echo '<target target="sobre"/>';
             break;
-            case 'servico':
-                echo '<target target="servico">';
+            case 'servicos':
+                echo '<target target="servicos">';
             break;
         }
     ?>

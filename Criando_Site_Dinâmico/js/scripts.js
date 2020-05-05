@@ -9,6 +9,7 @@ $(function(){
             menuMobile.fadeOut();
         }*/
         //slideToggle
+        //icone
         var icon = $('nav.mobile i');
         if(menuMobile.is(":hidden") == true){
             menuMobile.slideToggle();
@@ -20,8 +21,10 @@ $(function(){
             icon.addClass('fa-bars');
         }
     })
-    //scrou
+    //scroll da pagina sobre e serviços
     if($('target').length > 0){
-        alert('o elemnto existe');
+        var elemento = '#'+$('target').attr('target');
+        var divScroll = $(elemento).offset().top;
+        $('html, body').animate({'scrollTop': divScroll},2000);
     }
 })
