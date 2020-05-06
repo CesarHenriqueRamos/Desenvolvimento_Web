@@ -330,6 +330,24 @@ section.slider div.slider-sigle{
 .sigle3{
     background-image: url('../img/banner2.jpg');
 }
+.bullets{
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.bullets span{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #444;
+    cursor: pointer;
+    margin-left: 10px;
+    display: inline-block;   
+}
+span.active-slider{
+    background-color: #ccc;
+}
 /*expancivo*/
 @media screen and (max-width: 780px){
     .w50{

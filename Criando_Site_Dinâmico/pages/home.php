@@ -12,6 +12,9 @@
             <div class="slider-sigle sigle1"> </div>
             <div class="slider-sigle sigle2"></div>
             <div class="slider-sigle sigle3"></div> 
+            <div class="bullets">
+               
+            </div>
         </div>
             
     </section>
