@@ -9,7 +9,7 @@
     <meta name="author" content="Cesar Henrique Ramos">
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH?>css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo.ico">
     <title>Site Dinamido</title>
 </head>
 <body>
