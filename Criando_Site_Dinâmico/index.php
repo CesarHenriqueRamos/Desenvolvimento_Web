@@ -66,7 +66,12 @@
     </footer><!--footer-->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
-    <script src="<?php echo INCLUDE_PATH?>js/scripts.js"></script>  
+    <script src="<?php echo INCLUDE_PATH?>js/scripts.js"></script> 
+    <?php
+    if($url == 'home' || $url == ''){
+    ?>  
+    <script src="<?php echo INCLUDE_PATH?>js/slider.js"></script>  
+    <?php } ?>
     <?php
     if($url == 'contato'){
     ?>  
