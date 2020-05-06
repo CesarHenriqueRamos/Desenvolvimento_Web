@@ -293,6 +293,43 @@ form#contato input[type=submit]{
    cursor: pointer;
     
 }
+/*slider*/
+section.slider{
+    width: 100%;
+    height: 400px;
+    margin-top: 30px;
+    position: relative;
+    margin-bottom: 45px;
+}div.slider-title{
+    text-align: center;
+    position: absolute;
+    left: 45%;
+    margin-bottom: 5px;
+    top: 0;
+    color: #444;
+}
+section.slider div.slider-sigle{
+    width: 100%;
+    max-width: 1020px;
+    height: 100%;  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 50%;
+    top:calc(50% + 40px);
+    transform: translate(-50%,-50%);
+    border-radius: 20px;
+}
+.sigle1{
+    background-image: url('../img/banner.jpg');
+}
+.sigle2{    
+    background-image: url('../img/banner1.jpg');
+}
+.sigle3{
+    background-image: url('../img/banner2.jpg');
+}
 /*expancivo*/
 @media screen and (max-width: 780px){
     .w50{

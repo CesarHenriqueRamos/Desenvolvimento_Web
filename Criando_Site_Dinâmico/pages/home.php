@@ -6,6 +6,15 @@
             <input type="submit" name="acao" value="Cadastrar">
         </form><!--form banner-principal-->
     </section><!--banner-principal-->
+    <section class="slider">
+        <div class="container">
+            <div class="slider-title"><h2>Slider</h2></div>
+            <div class="slider-sigle sigle1"> </div>
+            <div class="slider-sigle sigle2"></div>
+            <div class="slider-sigle sigle3"></div> 
+        </div>
+            
+    </section>
     <section class="descricao-autor">
         <div class="container">
             <div id="sobre" class="w50">
