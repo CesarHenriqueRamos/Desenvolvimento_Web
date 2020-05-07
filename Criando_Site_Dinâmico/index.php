@@ -23,7 +23,9 @@
                 echo '<target target="servicos">';
             break;
         }
+        new Email();
     ?>
+
     <header>
         <div class="container">
             <div class="logo"><a href="">Ramos Tecnolog</a></div><!--logo-->
