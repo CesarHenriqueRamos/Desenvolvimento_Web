@@ -1,3 +1,4 @@
+
 <section class="banner-principal">
         <div class="overlay"></div>
         <form action="" method="post" id="form-banner">
@@ -15,6 +16,7 @@
             <div class="bullets">
                
             </div>
+            <div class="clear"></div>
         </div>
             
     </section>

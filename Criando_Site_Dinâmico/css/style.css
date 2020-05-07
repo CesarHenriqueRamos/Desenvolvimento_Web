@@ -7,6 +7,9 @@
 html,body{
     height: 100%;
 }
+body{
+    overflow-x: hidden;
+}
 /* classes padroes*/
 .container{
     max-width: 1020px;
@@ -25,6 +28,7 @@ html,body{
     width: 33.3%;
     float: left;
 }
+
 /*header*/
 header{
     background-color: #5E3EA1;
@@ -103,10 +107,13 @@ nav.mobile a{
     background-repeat: no-repeat;
     background-size: cover;
     height: calc(100% - 60px);
+    min-height: 600px;
     width: 100%;
+    position: relative;
+    
 }
 .banner-principal form{
-    position: relative;
+    position: absolute;
     top: 50%;
     left: 50%;
     max-width: 600px;
@@ -140,10 +147,11 @@ section.banner-principal form h2{
 }
 section.banner-principal div.overlay{
     position: absolute;
-    top: 60px;
+    top: 0;
     left: 0;
     width: 100%;
     height:calc(100% - 60px) ;
+    min-height: 600px;
     background-color: black;
     opacity: 0.3;
     z-index: 1;
@@ -242,6 +250,7 @@ footer{
     color: white;
     padding: 10px 0;
     height: 40px;
+  
 }
 /*pagina 404*/
 section.erro {

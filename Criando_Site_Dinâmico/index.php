@@ -32,7 +32,7 @@
                     <li><a href="<?php echo INCLUDE_PATH?>">Home</a></li>
                     <li><a href="<?php echo INCLUDE_PATH?>sobre">Sobre</a></li>
                     <li><a href="<?php echo INCLUDE_PATH?>servicos">Serviços</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH?>contato">Contato</a></li>
+                    <li><a realtime="contato" href="<?php echo INCLUDE_PATH?>contato">Contato</a></li>
                 </ul>
             </nav><!--nav desktop-->
             
@@ -42,14 +42,15 @@
                     <li><a href="<?php echo INCLUDE_PATH?>">Home</a></li>
                     <li><a href="<?php echo INCLUDE_PATH?>sobre">Sobre</a></li>
                     <li><a href="<?php echo INCLUDE_PATH?>servicos">Serviços</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH?>contato">Contato</a></li>
+                    <li><a realtime="contato" href="<?php echo INCLUDE_PATH?>contato">Contato</a></li>
                 </ul>
             </nav><!--nav mobile-->
             <div class="clear"></div>
         </div><!--container-->
     </header>
-    <?php
-        
+    <div class="container-principal"></div>
+    
+    <?php        
         if(file_exists('pages/'.$url.'.php')){
             include('pages/'.$url.'.php');
         }else{
@@ -59,14 +60,17 @@
                 include("pages/home.php");
             }            
         }
-
     ?>
+    
     <footer>
         <p>Todos os Direitos Reservados</p>
     </footer><!--footer-->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
     <script src="<?php echo INCLUDE_PATH?>js/scripts.js"></script> 
+    <!--busca pagina mas não carrega pagina-->
+    
+    
     <?php
     if($url == 'home' || $url == ''){
     ?>  
