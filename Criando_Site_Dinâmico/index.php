@@ -76,7 +76,7 @@
     <!---->
     <script src="<?php echo INCLUDE_PATH?>js/scripts.js"></script> 
     <!--efeito de carregar as div--> 
-    <!--<script src="<?php echo INCLUDE_PATH?>js/carrega_pagina.js"></script>-->
+    <!--<script src="<?php echo INCLUDE_PATH?>js/carrega_animacao.js"></script>-->
     <!--busca pagina mas não carrega pagina--> 
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDHPNQxozOzQSZ-djvWGOBUsHkBUoT_qH4"></script>
     <script src="<?php echo INCLUDE_PATH?>js/google_maps.js"></script>

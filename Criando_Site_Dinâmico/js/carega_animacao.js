@@ -1,6 +1,6 @@
 
-//efeito de carregamento da div
-/*$(function(){
+//efeito de carregamento da div com animação
+$(function(){
     var atual = -1;
     //a box-especial é a box que emcapsula todo o conteudo
     var maximo = $('.especialidade-single').length -1;
@@ -22,4 +22,3 @@
     }
 });
 
-*/
