@@ -13,6 +13,8 @@
     <title>Site Dinamido</title>
 </head>
 <body>
+<!--classe especial nome base-->
+<base base="<?php echo INCLUDE_PATH; ?>">
     <?php
         $url = isset( $_GET['url'])? $_GET['url'] : 'home';
         switch($url){
@@ -50,7 +52,7 @@
             <div class="clear"></div>
         </div><!--container-->
     </header>
-    <div class="container-principal"></div>
+    <div class="container-principal">
     
     <?php        
         if(file_exists('pages/'.$url.'.php')){
@@ -63,16 +65,21 @@
             }            
         }
     ?>
-    
+    </div><!--container-principal-->
     <footer>
         <p>Todos os Direitos Reservados</p>
     </footer><!--footer-->
+    <!--fontawsome-->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!--jquery-->
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <!---->
     <script src="<?php echo INCLUDE_PATH?>js/scripts.js"></script> 
-    <!--busca pagina mas não carrega pagina-->
-    
-    
+    <!--efeito de carregar as div--> 
+    <!--<script src="<?php echo INCLUDE_PATH?>js/carrega_pagina.js"></script>-->
+    <!--busca pagina mas não carrega pagina--> 
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDHPNQxozOzQSZ-djvWGOBUsHkBUoT_qH4"></script>
+    <script src="<?php echo INCLUDE_PATH?>js/google_maps.js"></script>
     <?php
     if($url == 'home' || $url == ''){
     ?>  
@@ -81,8 +88,7 @@
     <?php
     if($url == 'contato'){
     ?>  
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDHPNQxozOzQSZ-djvWGOBUsHkBUoT_qH4"></script>
-    <script src="<?php echo INCLUDE_PATH?>js/google_maps.js"></script>
+    
     <?php } ?>
 </body>
 </html>

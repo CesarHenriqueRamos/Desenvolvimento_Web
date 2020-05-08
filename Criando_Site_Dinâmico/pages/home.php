@@ -37,17 +37,17 @@
     <section class="especialidades">
         <div class="container">
             <h1 class="title">Especialidades</h1>
-            <div class="w33">
+            <div class="w33 especialidade-single">
                 <h2>CSS</h2>
                 <h3><i class="fab fa-css3-alt" style="color: #4C6EF5;"></i></h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
             </div><!--w33-->
-            <div class="w33">                
+            <div class="w33 especialidade-single">                
                 <h2>HTML</h2>
                 <h3><i class="fab fa-html5" style="color:#FD7E14"></i></h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
             </div><!--w33-->
-            <div class="w33">                
+            <div class="w33 especialidade-single">                
                 <h2>JavaScript</h2>
                 <h3><i class="fab fa-js" style="color: #82C91E;"></i></h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
