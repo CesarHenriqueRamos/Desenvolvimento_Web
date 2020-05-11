@@ -3,7 +3,7 @@ class Email{
    
     private $mailer;
 
-		/*public function __construct($host,$username,$senha,$name)
+		public function __construct($host,$username,$senha,$name)
 		{
 			
 			$this->mailer = new PHPMailer;
@@ -38,6 +38,6 @@ class Email{
 			}else{
 				return false;
 			}
-		}*/
+		}
 }
 ?>

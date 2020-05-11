@@ -25,7 +25,7 @@
                 echo '<target target="servicos">';
             break;
         }
-        new Email();
+        //new Email();
     ?>
 
     <header>
