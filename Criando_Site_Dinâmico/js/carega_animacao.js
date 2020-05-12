@@ -1,4 +1,3 @@
-
 //efeito de carregamento da div com animação
 $(function(){
     var atual = -1;
