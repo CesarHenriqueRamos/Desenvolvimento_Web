@@ -3,12 +3,10 @@ $(function(){
     var delay = 3;
     //var maxSlider = 2;
     var maxSlider = $('.slider-sigle').length - 1;
-    console.log(maxSlider);
     changesSlide();
     //criar as bolinhas
     for(var i = 0; i < maxSlider+1; i++){
         var content = $('.bullets').html();
-        console.log(content);
         if(i == 0){
             content += '<span class="active-slider"></span>'; 
         }else{

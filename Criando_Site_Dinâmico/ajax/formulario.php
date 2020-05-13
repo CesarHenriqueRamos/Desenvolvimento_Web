@@ -17,5 +17,5 @@ $chamaEmail->formatarEmail($info);
         $data['erro'] = true;
     }*/
     $data['retorno'] = 'Sucesso';
-    die(json_encode(data));
+    die(json_encode($data));
 ?>
