@@ -70,26 +70,26 @@
         <p>Todos os Direitos Reservados</p>
     </footer><!--footer-->
     <!--fontawsome-->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!--<script src="https://kit.fontawesome.com/a076d05399.js"></script>-->
     <!--jquery-->
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
     <!---->
-    <script src="<?php echo INCLUDE_PATH?>js/scripts.js"></script> 
+    <!--<script src="<?php echo INCLUDE_PATH?>js/scripts.js"></script> -->
     <!--efeito de carregar as div--> 
     <!--<script src="<?php echo INCLUDE_PATH?>js/carrega_animacao.js"></script>-->
     <!--busca pagina mas não carrega pagina--> 
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDHPNQxozOzQSZ-djvWGOBUsHkBUoT_qH4"></script>
-    <script src="<?php echo INCLUDE_PATH?>js/google_maps.js"></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDHPNQxozOzQSZ-djvWGOBUsHkBUoT_qH4"></script>
+    <script src="<?php echo INCLUDE_PATH?>js/google_maps.js"></script>-->
     <?php
     if($url == 'home' || $url == ''){
     ?>  
-    <script src="<?php echo INCLUDE_PATH?>js/slider.js"></script>  
+    <!--<script src="<?php echo INCLUDE_PATH?>js/slider.js"></script>-->
     <?php } ?>
     <?php
     if($url == 'contato'){
     ?>  
     
     <?php } ?>
-    <script src="<?php echo INCLUDE_PATH?>js/formulario.js"></script>
+    <script src="<?php echo INCLUDE_PATH?>js/formularios.js"></script>
 </body>
 </html>
