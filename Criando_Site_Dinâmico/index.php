@@ -90,5 +90,6 @@
     ?>  
     
     <?php } ?>
+    <script src="<?php echo INCLUDE_PATH?>js/formulario.js"></script>
 </body>
 </html>

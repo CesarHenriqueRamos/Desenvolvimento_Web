@@ -1,32 +1,10 @@
 
 <section class="banner-principal">
         <div class="overlay"></div>
-        <?php 
-            if(isset($_POST['acao'])){
-                if($_POST['email'] != ''){
-                    $email = $_POST['email'];
-                    if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-                        //email validado
-                        $chamaEmail = new Email('nome da hospedagem','email de envio na hospedagem','senha do email','Nome de Quem ta enviando ex:Cesar Henrique Ramos');
-                        $chamaEmail->addAdress('email@evan.net.br',"Cesar Henrique");
-                        $info = array('assunto'=>'Um Novo Email Cadastrado no Saite', 'corpo'=>$email);
-                        $chamaEmail->formatarEmail($info);
-                        if($chamaEmail->enviarEmail()){
-                            echo '<script>alert("Email Enviado com Sucesso")</script>';
-                        }else{
-                            echo '<script>alert("Erro ao Enviar o Email")</script>';
-                        }
-                    }else{
-                        echo '<script>alert("Insira um email valido")</script>';
-                    }
-                }else{
-                    echo '<script>alert("Insira um email valido")</script>';
-                }
-            }
-        ?>
         <form action="" method="post" id="form-banner">
             <h2>Qual Seu Melhor Email?</h2>
             <input type="email" name="email" id="" required>
+            <input type="hidden" name="indentificador" value="indentificador_home">
             <input type="submit" name="acao" value="Cadastrar">
         </form><!--form banner-principal-->
     </section><!--banner-principal-->
