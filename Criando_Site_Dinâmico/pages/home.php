@@ -1,5 +1,4 @@
-<section class="banner-container">
-	
+<section class="banner-container">	
 	<div class="overlay"></div><!--overlay-->
 		<div class="center">
 		<form method="post">

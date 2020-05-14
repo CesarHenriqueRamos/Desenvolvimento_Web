@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
+    outline:none;
 }
 html,body{
     height: 100%;
@@ -155,7 +156,7 @@ section.banner-container form input[type=submit]{
     color: white;
     cursor: pointer;
 }
-section.banner-principal div.overlay{
+section.banner-container div.overlay{
     position: absolute;
     top: 0;
     left: 0;
