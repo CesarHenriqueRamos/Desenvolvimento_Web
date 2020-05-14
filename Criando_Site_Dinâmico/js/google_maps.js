@@ -75,7 +75,7 @@ $(function(){
 	}
 	//carregamento da pagina
 /*tem que estar dentro da classe do mapa*/
-	var include_path = $('base').attr('base');
+	
     carregaDinamico();
     function carregaDinamico(){
         $('[realtime]').click(function(){
