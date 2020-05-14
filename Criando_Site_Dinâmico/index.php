@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="palavras-chave,do,meu,site">
 	<meta name="description" content="Descrição do meu website">
-    
+    <meta name="author" content="Cesar Henrique Ramos">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="<?php echo INCLUDE_PATH; ?>estilo/style.css" rel="stylesheet" />
     <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico">
