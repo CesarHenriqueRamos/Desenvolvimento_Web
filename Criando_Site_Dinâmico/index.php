@@ -13,6 +13,7 @@
     <title>Site Dinamico</title>
 </head>
 <body>
+
 <base base="<?php echo INCLUDE_PATH; ?>" />
 	<?php
 		$url = isset($_GET['url']) ? $_GET['url'] : 'home';
@@ -25,8 +26,13 @@
 				echo '<target target="servicos" />';
 				break;
 		}
-	?>
-	
+    ?>
+    <!--componentes de mensagem e load-->
+    <div class="sucesso">Formulário Enviado com Sucesso!</div>
+    <div class="erro">Erro ao Enviar o Formulário</div>
+	<div class="overlay-loading">
+		<img src="<?php echo INCLUDE_PATH ?>images/ajax-loader.gif" />
+	</div><!--overlay-loading-->
 	<header>
 		<div class="container">
 			<div class="logo left"><a href="/">Logomarca</a></div><!--logo-->

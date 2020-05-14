@@ -17,9 +17,6 @@
 		$data['erro'] = true;
 	}*/
 
-
-
-	$data['retorno'] = 'sucesso';
-
+	$data['erro'] = 'erro';
 	die(json_encode($data));
 ?>
