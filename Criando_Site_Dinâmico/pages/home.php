@@ -1,13 +1,16 @@
-
-<section class="banner-principal">
-        <div class="overlay"></div>
-        <form action="" method="post" id="form-banner">
-            <h2>Qual Seu Melhor Email?</h2>
-            <input type="email" name="email" id="" required>
-            <input type="hidden" name="indentificador" value="indentificador_home">
-            <input type="submit" name="acao" value="Cadastrar">
-        </form><!--form banner-principal-->
-    </section><!--banner-principal-->
+<section class="banner-container">
+	
+	<div class="overlay"></div><!--overlay-->
+		<div class="center">
+		<form method="post">
+			<h2>Qual o seu melhor e-mail?</h2>
+			<input type="email" name="email" required />
+			<input type="hidden" name="identificador" value="form_home" />
+			<input type="submit" name="acao" value="Cadastrar!">
+		</form>
+		</div><!--center-->
+		
+</section><!--banner-principal-->
     <section class="slider">
         <div class="container">
             <div class="slider-title"><h2>Slider</h2></div>
@@ -30,7 +33,7 @@
             </div><!--w50-->
             <div class="w50">
                 <!--pegar imagem depois-->
-                <img src="<?php echo INCLUDE_PATH?>img/cesar2.jpg" alt="">
+                <img src="<?php echo INCLUDE_PATH?>images/cesar2.jpg" alt="">
             </div><!--w50-->
         </div><!--container-->
         <div class="clear"></div>
