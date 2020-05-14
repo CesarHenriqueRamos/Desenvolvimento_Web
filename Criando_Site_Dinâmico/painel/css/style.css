@@ -39,6 +39,7 @@ html,body{
     left: 50%;
     transform: translate(-50%,-50%);
     border-radius: 20px;
+    box-shadow: 10px 10px 5px rgba(0,0,0,0.5);
 }
 .login h2{
     color: rgb(35, 10, 88);
@@ -49,7 +50,7 @@ input{
     width: calc(100% - 4%);
     padding: 10px;
     border-radius: 20px;
-    border: 0;
+    border: 1px solid #ccc;
     background-color: #E8F0FE;
 }
 input[type=submit]{
@@ -57,4 +58,5 @@ input[type=submit]{
     color: white;
     background-color: #5E3EA1;
     cursor: pointer;
+    border: 0;
 }
