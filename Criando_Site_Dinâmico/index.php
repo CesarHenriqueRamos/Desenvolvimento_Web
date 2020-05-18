@@ -9,7 +9,7 @@
     <meta name="author" content="Cesar Henrique Ramos">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="<?php echo INCLUDE_PATH; ?>estilo/style.css" rel="stylesheet" />
-    <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico">
+    <link rel="icon" href="<?php echo INCLUDE_PATH; ?>favicon.ico" type="image/x-icon" />
     <title>Site Dinamico</title>
 </head>
 <body>
