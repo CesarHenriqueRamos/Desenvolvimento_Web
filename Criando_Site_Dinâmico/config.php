@@ -21,8 +21,8 @@
 	//Conectar com banco de dados!
 	define('HOST','localhost');
 	define('USER','root');
-	define('PASSWORD','');
-	define('DATABASE','projeto_01');
+	define('PASS','');
+	define('DB','saite_dinamico');
 
 	//Constantes para o painel de controle
 	define('NOME_EMPRESA','Danki Code');

@@ -8,7 +8,7 @@
 html,body{
     height: 100%;
     /*background-color: rgb(35, 10, 88) ;*/
-    background-color: rgb(190, 190, 190);
+    background-color: #5E3EA1;
 }
 /* classes padroes*/
 .container{
@@ -39,7 +39,7 @@ html,body{
     left: 50%;
     transform: translate(-50%,-50%);
     border-radius: 20px;
-    box-shadow: 10px 10px 5px rgba(0,0,0,0.5);
+    box-shadow: 10px 10px 5px rgba(0,0,0,0.7);
 }
 .login h2{
     color: rgb(35, 10, 88);
@@ -59,4 +59,16 @@ input[type=submit]{
     background-color: #5E3EA1;
     cursor: pointer;
     border: 0;
+}
+.erro{
+    text-align: center;
+    font-size: 17px;
+    background-color: red;
+    color: white;
+    padding: 10px 2%;
+    border-radius: 20px;
+}
+.erro i{
+    font-size: 20px;
+    
 }

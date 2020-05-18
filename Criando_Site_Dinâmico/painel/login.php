@@ -12,7 +12,28 @@
     <title>Login</title>
 </head>
 <body>
+
     <section class="login">
+    <?php
+        if(isset($_POST['acao'])){
+            $user = $_POST['user'];
+            $password = $_POST['password'];
+            $sql = MySql::connect()->prepare("SELECT * FROM `tb_admin.usuarios` WHERE user = ? AND password = ?");
+            $sql->execute(array($user,$password));
+            if($sql->rowCount() == 1){
+                //logado com sucesso
+                $_SESSION['login'] = true;
+                $_SESSION['user'] = $user;
+                $_SESSION['password'] = $password;
+                header('Location: '.INCLUDE_PATH_PAINEL);
+                die();
+            }else{
+                //falha ao logar
+                echo '<div class="erro"><i class="fas fa-times"></i> Usuarios ou senha Incorretos</div>';
+            }
+        }
+        
+    ?>
         <div class="container">
             <form action="" method="post">
                 <h2>Login</h2>
@@ -23,5 +44,6 @@
             </form>
         </div>
     </section>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>

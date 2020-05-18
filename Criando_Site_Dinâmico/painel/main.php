@@ -1,1 +1,1 @@
-estou na pagina main
+<h2>Benvindo ao painel <?php echo $_SESSION['user'] ?></h2>
