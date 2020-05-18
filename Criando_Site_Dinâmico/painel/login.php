@@ -11,7 +11,7 @@
     <link rel="icon" href="<?php echo INCLUDE_PATH; ?>favicon.ico" type="image/x-icon" />
     <title>Login</title>
 </head>
-<body>
+<body class="log">
 
     <section class="login">
     <?php
@@ -20,16 +20,21 @@
             $password = $_POST['password'];
             $sql = MySql::connect()->prepare("SELECT * FROM `tb_admin.usuarios` WHERE user = ? AND password = ?");
             $sql->execute(array($user,$password));
+            $info = $sql->fetch();
             if($sql->rowCount() == 1){
+                
                 //logado com sucesso
                 $_SESSION['login'] = true;
                 $_SESSION['user'] = $user;
                 $_SESSION['password'] = $password;
+                $_SESSION['cargo'] = $info['cargo'];
+                $_SESSION['nome'] = $info['nome'];
+                $_SESSION['img'] = $info['img'];
                 header('Location: '.INCLUDE_PATH_PAINEL);
                 die();
             }else{
                 //falha ao logar
-                echo '<div class="erro"><i class="fas fa-times"></i> Usuarios ou senha Incorretos</div>';
+                echo '<div class="erro"><i class="fas fa-times"></i> Usuário ou Senha Incorreta</div>';
             }
         }
         
