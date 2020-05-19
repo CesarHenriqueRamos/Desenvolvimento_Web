@@ -23,7 +23,7 @@
                 <i class="fa fa-bars" ></i>
             </div>
             <div class="logout">
-            <a  href="<?php echo INCLUDE_PATH_PAINEL; ?>logout"><i class="fas fa-sign-out-alt"></i> LogOut</a>
+            <a  href="<?php echo INCLUDE_PATH_PAINEL; ?>?logout"><i class="fas fa-sign-out-alt"></i> LogOut</a>
             </div>
 		<div class="clear"></div><!--clear-->
 		</div><!--container-->
