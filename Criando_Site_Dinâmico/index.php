@@ -35,7 +35,7 @@
 	</div><!--overlay-loading-->
 	<header>
 		<div class="container">
-			<div class="logo left"><a href="/">Logomarca</a></div><!--logo-->
+			<div class="logo left"><a href="/">RamosTecnolog</a></div><!--logo-->
 			<nav class="desktop right">
 				<ul>
 					<li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>

@@ -1,21 +1,33 @@
 $(function() {
-    $('div.ocultacao i').click(function(){
-        var menu_lateral = $('.menu_lateral');
-        var header = $('header');
-        var conteudo = $('.conteudo')
-
-        if(menu_lateral.is(":hidden") == true){
-            menu_lateral.fadeIn();;
-            header.css('width', 'calc(100% - 300px)');
-            header.css('left', '300px');
-            conteudo.css('width', 'calc(100% - 300px)');
-            conteudo.css('left', '300px');
+    var open = true;
+    var windowSize = $(window)[0].innerWidth;
+    var targetSizeMenu = (windowSize <= 400) ? 200 : 250;
+    if(windowSize <= 760){
+        $('.menu').css('width','0').css('padding', '0');
+        open = false;
+    }
+    $('.menu-btn').click(function(){
+        if(open){
+            $('.menu').animate({'width':0, 'padding':0},function(){
+                open = false;
+            });
+             $('.conteudo, header').css({'width': '100%'});  
+            $('.conteudo, header').animate({'left':0},function(){
+                open = false;
+            });
         }else{
-            menu_lateral.fadeOut();
-            header.css('width', '100%');
-            header.css('left', '0');
-            conteudo.css('width', '100%');
-            conteudo.css('left', '0');
+            //menu fechado
+            $('.menu').css('display', 'block');
+            //
+            $('.menu').animate({'width': targetSizeMenu+'px','padding':'10px 0'},function () {
+                open = true;
+            });
+            if(windowSize > 768)
+                $('.conteudo, header').css('width','calc(100% - 250px');
+            
+            $('.conteudo, header').animate({'left': targetSizeMenu+'px'},function(){
+                open = true;
+            });
         }
     });
 

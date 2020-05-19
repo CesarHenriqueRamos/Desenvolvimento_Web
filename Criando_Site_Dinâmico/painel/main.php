@@ -19,39 +19,37 @@
 <body>
 <header>
 		<div class="container">
-			<div class="logo left"><a href="/">Logomarca</a></div><!--logo-->
-			<nav class="desktop right">
-				<ul>
-					<li><a  href="<?php echo INCLUDE_PATH_PAINEL; ?>?logout"><i class="fas fa-sign-out-alt"></i> LogOut</a></li>
-				</ul>
-			</nav>
-			 <nav class="mobile right">
-			 	<div class="botao-menu-mobile">
-			 		<i class="fa fa-bars" aria-hidden="true"></i>
-			 	</div>
-                 <ul>
-					<li><a  href="<?php echo INCLUDE_PATH_PAINEL; ?>logout"><i class="fas fa-sign-out-alt"></i> LogOut</a></li>
-				</ul>
-			</nav>
+			<div class="menu-btn">
+                <i class="fa fa-bars" ></i>
+            </div>
+            <div class="logout">
+            <a  href="<?php echo INCLUDE_PATH_PAINEL; ?>logout"><i class="fas fa-sign-out-alt"></i> LogOut</a>
+            </div>
 		<div class="clear"></div><!--clear-->
-		</div><!--center-->
+		</div><!--container-->
     </header>
-    <div class="menu_lateral">
-    <div class="ap">
-        <?php if($_SESSION['img'] == ''){?>
+    <div class="menu">
+        <div class="menu-wraper">
+            <div class="box-usuario">
+            <?php if($_SESSION['img'] == ''){?>
             <div class="avata-user"><i class="fa fa-user"></i></div>
-        <?php } else{?>
-            <div class="img-user"><img src="<?php INCLUDE_PATH_PAINEL?>uploads/<?php echo $_SESSION['img'];?>" alt="">
-        <?php }?>    
-            <p id="bem-vindo"><?php echo $_SESSION['nome'] ?></p>
-            <p id="cargo"><?php echo pegaCargo($_SESSION['cargo']);?></p>
-            <hr>
-        </div>
-        <div class="clear"></div>
+            <?php } else{?>
+                <div class="img-user"><img src="<?php INCLUDE_PATH_PAINEL?>uploads/<?php echo $_SESSION['img'];?>" alt="">
+            <?php }?>    
+                <p id="bem-vindo"><?php echo $_SESSION['nome'] ?></p>
+                <p id="cargo"><?php echo pegaCargo($_SESSION['cargo']);?></p>
+                <hr>
+               
+        </div><!--boo-usuario-->
+        <div class="items-menu">
+
+        </div><!--itens-menu-->
+        </div>     
+        
     </div>
     <div class="conteudo">
         <div class="container">
-            <div class="ocultacao"><i class="fa fa-bars" aria-hidden="true"></i></div>
+            
             <div class="box-container w100"></div>
             <div class="box-container w100"></div>
             <div class="box-container w50 marge-right"></div>
