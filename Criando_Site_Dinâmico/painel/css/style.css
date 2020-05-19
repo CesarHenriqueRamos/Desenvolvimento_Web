@@ -19,9 +19,17 @@ html,body{
 .clear{
     clear: both;
 }
-.w50{
-    width: 50%;
+.w100{
+    width: 100%;    
     float: left;
+}
+.w50{
+    width: 49%;    
+    float: left;
+    background-color: red;
+}
+.marge-right{
+    margin-right: 2%;
 }
 .w33{
     width: 33.3%;
@@ -79,8 +87,11 @@ input[type=submit]{
 header{
     background-color: rgb(35, 10, 88);
     padding: 10px;
+    width: calc(100% - 300px);
     height: 60px;
-   
+    position: absolute;
+    top: 0;
+    left: 300px;
 }
 .logo{
     font-size: 30px;
@@ -148,21 +159,31 @@ nav.mobile a{
 }
 div.menu_lateral{
     width: 300px;
-    float: left;
-    height:calc(100% - 60px) ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height:100%;
     background-color: rgb(66, 66, 66);
     overflow-y: auto;
 }
 div.conteudo{
     width: calc(100% - 300px);
-    float: left;
-    height:calc(100% - 60px) ;
+    position: absolute;
+    top: 60px;
+    left: 300px;
+    min-height: 100%;
     background-color: #ccc;
+}
+div.box-container{
+    
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: white;
 }
 div.ocultacao{
     width: 40px;
     cursor: pointer;
-    float: left;
+    
     
 }
 div.ocultacao i{
@@ -209,4 +230,17 @@ p#cargo{
     display: block;
     color: white;
     font-size: 14px;
+}
+@media screen and (max-width:780px){
+    .menu_lateral{
+        display: none;
+    }
+    header{
+        width: 100%;
+        left: 0;
+    }
+    div.conteudo{
+        width: 100%;
+        left: 0;
+    }
 }

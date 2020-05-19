@@ -50,12 +50,27 @@
         <div class="clear"></div>
     </div>
     <div class="conteudo">
-        <div class="ocultacao"><i class="fa fa-bars" aria-hidden="true"></i></div>
-        
+        <div class="container">
+            <div class="ocultacao"><i class="fa fa-bars" aria-hidden="true"></i></div>
+            <div class="box-container w100"></div>
+            <div class="box-container w100"></div>
+            <div class="box-container w50 marge-right"></div>
+            <div class="box-container w50"></div>
+            
+            <div class="box-container w100"></div>
+            
+        </div>
+        <?php
+            /*for($i = 0; $i <10000; $i++){
+                echo 'Teste<br>';
+            }*/
+        ?>
         
         <div class="clear"></div>
     </div>
 
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+<script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/script.js"></script>
 </body>
 </html>
