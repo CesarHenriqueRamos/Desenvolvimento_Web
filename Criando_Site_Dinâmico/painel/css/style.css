@@ -194,7 +194,7 @@ div.box-container{
     background-color: #00BFA5;
 }
 /*avata*/
-.avata-user{
+.avata-user, div.img-user img{
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -228,6 +228,11 @@ p#cargo{
     color: white;
     font-size: 14px;
 }
+@media screen and ( max-width:1200px){
+    .box-container .w33{
+        height: 100px;
+    }
+}
 @media screen and (max-width:768px){
     header{
         width: 100%;
@@ -240,6 +245,7 @@ p#cargo{
     .box-container .w33{
         width: 100%;
         margin-bottom: 10px;
+        height: auto;
     }
 }
 @media screen and (max-width:400px){
