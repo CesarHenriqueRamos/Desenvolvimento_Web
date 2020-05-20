@@ -35,7 +35,7 @@ body{
     margin-right: 2%;
 }
 .w33{
-    width: 33.3%;
+    width: 31.3%;
     float: left;
 }
 /*pagina login*/
@@ -111,6 +111,23 @@ div.menu{
     width: 250px;
     padding: 10px 0;
 }
+.menu-wraper h2{
+    font-size: 16px;
+    font-weight: 300;
+    padding: 5px 10px;
+    color: white;
+    background-color: rgb(24, 24, 24);
+}
+.menu-wraper a{
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: lighter;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    border-bottom: 3px solid rgb(24, 24, 24);
+}
 /*ocultação*/
 .logout{
     float: right;
@@ -137,7 +154,7 @@ div.conteudo{
     left: 250px;
 }
 div.box-container{
-    
+    border-radius: 10px;
     margin-bottom: 25px;
     padding: 30px;
     background-color:white;
@@ -145,6 +162,36 @@ div.box-container{
 .box-container h2{
     font-size: 23px;
     font-weight: 300;
+}
+.box-container h2.title{
+    font-size: 18px;
+    font-weight: 300;
+    padding-bottom: 10px;
+    width: 100%;
+}
+.box-container .w33{
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+.box-container h3{
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+}
+.box-container p{
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+}
+.user{
+    background-color: #F4B03E;
+}
+.visita{
+    background-color: #E05C4E;
+}
+.visita-hoje{
+    background-color: #00BFA5;
 }
 /*avata*/
 .avata-user{

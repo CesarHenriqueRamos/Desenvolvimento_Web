@@ -42,7 +42,19 @@
                
         </div><!--boo-usuario-->
         <div class="items-menu">
-
+                <h2>Cadastro</h2>
+                    <a href="">Cadastro de Depoimento</a>
+                    <a href="">Cadastro de Serviço</a>
+                    <a href="">Cadastro de Slides</a>
+                <h2>Gestão</h2>
+                    <a href="">Lista de Depoimento</a>
+                    <a href="">Lista de Serviço</a>
+                    <a href="">Lista de Slides</a>
+                <h2>Administrador</h2>
+                    <a href="">Editar Usuario</a>
+                    <a href="">Adcionar Usuario</a>
+                <h2>Configuração Geral</h2>
+                    <a href="">Editar</a>
         </div><!--itens-menu-->
         </div>     
         
@@ -50,7 +62,21 @@
     <div class="conteudo">
         <div class="container">
             
-            <div class="box-container w100"></div>
+            <div class="box-container w100">
+            <h2 class="title"><i class="fas fa-home"></i> Painel de Controle</h2>
+                <div class="w33 user marge-right">
+                    <h3>Usuarios Online</h3>
+                    <p>3</p>
+                </div>
+                <div class="w33 visita marge-right">
+                    <h3>Total de Visitas</h3>
+                    <p>100</p>
+                </div>
+                <div class="w33 visita-hoje">
+                    <h3>Visitas Hoje</h3>
+                    <p>5</p>
+                </div>
+            </div>
             <div class="box-container w100"></div>
             <div class="box-container w50 marge-right"></div>
             <div class="box-container w50"></div>
