@@ -1,7 +1,15 @@
 <?php
     $usuariosOnline = Site::listarUsuaruosOnline();
+    //visitas totais
+    $visitasTotais = MySql::connect()->prepare("SELECT * FROM `tb_admin.visitas`");
+    $visitasTotais->execute();
+    $visitasTotais = $visitasTotais->rowCount();
+    //visitas hoje
+    $visitasHoje = MySql::connect()->prepare("SELECT * FROM `tb_admin.visitas` WHERE dia = ?");
+    $visitasHoje->execute(array(date('Y-m-d')));
+    $visitasHoje = $visitasHoje->rowCount();
 ?>
-<div class="container">
+
             
             <div class="box-container w100">
             <h2 class="title"><i class="fas fa-home"></i> Painel de Controle - <?php echo NOME_EMPRESA ?></h2>
@@ -11,11 +19,11 @@
                 </div>
                 <div class="w33 visita marge-right">
                     <h3>Total de Visitas</h3>
-                    <p>100</p>
+                    <p><?php echo $visitasTotais; ?></p>
                 </div>
                 <div class="w33 visita-hoje">
                     <h3>Visitas Hoje</h3>
-                    <p>5</p>
+                    <p><?php echo $visitasHoje ?></p>
                 </div>
             </div>
             
@@ -49,6 +57,5 @@
             <div class="box-container w50 marge-right"></div>
             <div class="box-container w50"></div>
             
-            <div class="box-container w100"></div>
             
-</div>
+            

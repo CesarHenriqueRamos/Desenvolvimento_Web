@@ -74,6 +74,32 @@ input[type=submit]{
     cursor: pointer;
     border: 0;
 }
+input[type=file]{
+    border: none;
+    background-color: white;
+}
+.sucesso{
+    position: fixed;
+    right: 20px;
+    top: 70px;
+    padding: 10px 20px;
+    z-index: 3;
+    background-color: #4db6ac;
+    color: white;
+    font-size: 14px;
+    border-radius: 20px;
+}
+.err{
+    position: fixed;
+    right: 20px;
+    top: 70px;
+    padding: 10px 20px;
+    z-index: 3;
+    background-color: #d84315;
+    color: white;
+    font-size: 14px;
+    border-radius: 20px;
+}
 .erro{
     text-align: center;
     font-size: 17px;
@@ -259,6 +285,16 @@ p#cargo{
     width: 50%;
     float: left;
     padding: 5px 0;
+}
+/*pagina editar usuario*/
+form#editar-usuario{
+    margin-top: 10px;
+}
+form#editar-usuario label{
+    margin: 10px 2%;
+    width: calc(100% - 4%);
+    padding: 10px;
+   
 }
 
 @media screen and ( max-width:1200px){

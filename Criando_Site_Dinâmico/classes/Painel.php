@@ -22,5 +22,12 @@ class Painel{
             include('pages/home.php');
         }
     }
+    public static function alert($tipe,$mesagem){
+        if($tipe == 'sucesso'){
+            echo '<div class="sucesso"><i class="fas fa-check"></i> '.$mesagem.'</div>';
+        }else if($tipe == 'erro'){
+            echo '<div class="err"> <i class="fas fa-times"></i> '.$mesagem.'</div>';
+        }
+    }
 }
 ?>

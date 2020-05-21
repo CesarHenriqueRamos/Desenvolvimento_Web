@@ -32,7 +32,9 @@
 		</div><!--container-->
     </header>
     <div class="conteudo">
-        <?php Painel::carregarPagine();?>
+        <div class="container">
+            <?php Painel::carregarPagine();?>
+        </div>        
     </div>
     <div class="menu">
         <div class="menu-wraper">
@@ -57,7 +59,7 @@
                         <a href="">Lista de Serviço</a>
                         <a href="">Lista de Slides</a>
                     <h2>Administrador</h2>
-                        <a href="">Editar Usuario</a>
+                        <a href="<?php echo INCLUDE_PATH_PAINEL?>editar-usuario">Editar Usuario</a>
                         <a href="">Adcionar Usuario</a>
                     <h2>Configuração Geral</h2>
                         <a href="">Editar</a>
