@@ -25,7 +25,7 @@
 	define('DB','saite_dinamico');
 
 	//Constantes para o painel de controle
-	define('NOME_EMPRESA','Danki Code');
+	define('NOME_EMPRESA','RamosTecnolog');
 
 	//Funções do painel
 	function pegaCargo($cargo){

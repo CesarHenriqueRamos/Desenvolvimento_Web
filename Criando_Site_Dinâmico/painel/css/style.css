@@ -133,9 +133,10 @@ div.menu{
     float: right;
 }
 .logout a{
+    height: 60px;
     padding: 0 20px;
     position: relative;
-    top: 4px;
+    top: 8px;
     text-decoration: none;
     color: white;
     font-size: 16px;
@@ -146,6 +147,17 @@ div.menu-btn{
     color: white;
     cursor: pointer; 
 }
+div.btn-home{
+    display: inline;
+    
+}
+.btn-home a{
+    height: 60px;
+    width: 100px;
+    padding: 20px 20px;
+     background-color: #5E3EA1;
+     cursor: pointer; 
+ }
 /*area de conteudo*/
 div.conteudo{
     width: calc(100% - 250px);
@@ -228,6 +240,23 @@ p#cargo{
     color: white;
     font-size: 14px;
 }
+/*tabela responciva*/
+
+
+.tabela-responciva{
+    margin-top: 10px;
+}
+.tabela-responciva .row:nth-child(1){
+    font-weight: bold;
+    color: #555;
+    border-bottom: 1px solid #ccc;
+}
+.col{
+    width: 50%;
+    float: left;
+    margin-top: 10px;
+}
+
 @media screen and ( max-width:1200px){
     .box-container .w33{
         height: 100px;
@@ -247,6 +276,7 @@ p#cargo{
         margin-bottom: 10px;
         height: auto;
     }
+    
 }
 @media screen and (max-width:400px){
     .menu-wraper{
