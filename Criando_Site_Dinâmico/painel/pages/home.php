@@ -1,10 +1,13 @@
+<?php
+    $usuariosOnline = Site::listarUsuaruosOnline();
+?>
 <div class="container">
             
             <div class="box-container w100">
             <h2 class="title"><i class="fas fa-home"></i> Painel de Controle - <?php echo NOME_EMPRESA ?></h2>
                 <div class="w33 user marge-right">
                     <h3>Usuarios Online</h3>
-                    <p>3</p>
+                    <p><?php echo count($usuariosOnline);?></p>
                 </div>
                 <div class="w33 visita marge-right">
                     <h3>Total de Visitas</h3>
@@ -29,13 +32,14 @@
                     </div><!--col-->
                     <div class="clear"></div>
                 </div><!--row-->
-                <?php for($i = 0; $i < 10; $i++){?>
+                <?php foreach($usuariosOnline as $key =>$value){?>
+                
                 <div class="row">
                     <div class="col">
-                        <span>192.168.0.20</span>
+                        <span><?php echo $value['ip'];?></span>
                     </div><!--col-->
                     <div class="col">
-                        <span>21/05/2020 19:00:00</span>
+                        <span><?php echo date('d/m/Y H:i:s',strtotime($value['ultima_acao']));?></span>
                     </div><!--col-->
                     <div class="clear"></div>
                 </div><!--row-->
