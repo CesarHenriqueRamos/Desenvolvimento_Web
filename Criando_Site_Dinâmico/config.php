@@ -28,13 +28,9 @@
 	define('NOME_EMPRESA','RamosTecnolog');
 
 	//Funções do painel
-	function pegaCargo($cargo){
-		$arr = [
-			'0' => 'Normal',
-			'1' => 'SubAdministrador',
-			'2' => 'Administrador'
-		];
-		return $arr[$cargo];
+	function pegaCargo($indice){
+		
+		return Painel::$cargo[$indice];
 	}
 
 	function selecionadoMenu($par){
@@ -58,7 +54,6 @@
 			return;
 		}else{
 			include('painel/pages/permissao_negada.php');
-			die();
 		}
 	}
 ?>

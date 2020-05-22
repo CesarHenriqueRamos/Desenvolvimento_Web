@@ -1,5 +1,10 @@
 <?php
 class Painel{
+    public static $cargo = [
+        '0' => 'Normal',
+        '1' => 'SubAdministrador',
+        '2' => 'Administrador'
+    ];
     public static function logado(){
         return isset($_SESSION['login'])? true : false;
     }
@@ -54,7 +59,20 @@ class Painel{
     public static function deleteFile($file){
         @unlink('uploads/'.$file);
     }
-    
+    //validar se o osuario existe
+   public static function userExist($user){
+       $sql = MySql::connect()->prepare("SELECT `id` FROM `tb_admin.usuarios` WHERE user = ?");
+       $sql->execute(array($user));
+       if($sql->rowCount() == 1){
+           return true;
+       }else{
+           return false;
+       }
+   }
+   public static function addUser($user,$senha,$imagem,$nome,$cargo){
+    $sql = MySql::connect()->prepare("INSERT INTO `tb_admin.usuarios` VALUES(null,?,?,?,?,?)");
+    $sql->execute(array($user,$senha,$imagem,$nome,$cargo));
+   }
 
     
 }
