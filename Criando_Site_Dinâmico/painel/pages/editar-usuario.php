@@ -36,10 +36,7 @@
                     Painel::alert('erro', 'Ocorreu Um Erro');
                 }
             }        
-    
-           
-
-			}
+	    }
 		?>
         <div class="box-form">
             <label for="nome">Nome:</label>
