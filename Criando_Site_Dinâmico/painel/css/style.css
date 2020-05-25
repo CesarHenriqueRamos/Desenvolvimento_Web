@@ -304,6 +304,17 @@ p#cargo{
     float: left;
     padding: 5px 0;
 }
+/*tabela*/
+table{
+    width: 100%;
+}
+tr{
+    width: 100%;
+}
+td{
+    width: 50%;
+    padding: 5px 10px;
+}
 /*pagina editar usuario*/
 form#editar-usuario{
     margin-top: 10px;
