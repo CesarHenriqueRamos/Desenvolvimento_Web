@@ -304,16 +304,43 @@ p#cargo{
     float: left;
     padding: 5px 0;
 }
-/*tabela*/
-table{
-    width: 100%;
+/*tabela responciva depoimento*/
+.depoimento .col{
+    width: 40%;
+    float: left;
+    padding: 5px 0;
 }
-tr{
-    width: 100%;
+.depoimento .col1{
+    width: 10%;
+    float: left;
+    padding: 5px 0;
+    text-align: center;
 }
-td{
-    width: 50%;
-    padding: 5px 10px;
+.col1 i{
+    color: white;
+}
+.depoimento .row:nth-child(1){
+    background-color:#4C6EF5;
+    font-size: 18px;
+    color: white;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+.editar,.delete{
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+}
+.editar{
+    
+    background-color: green;
+    color: white;
+}
+.delete{
+    background-color: red;
 }
 /*pagina editar usuario*/
 form#editar-usuario{

@@ -98,7 +98,12 @@ class Painel{
        }
        return $certo;
    }
-  
+   //buscar dados padrao
+   public static function selectAll($tabela){
+        $sql = MySql::connect()->prepare("SELECT * FROM `$tabela`");
+        $sql->execute();
+        return $sql->fetchAll();
+   }
     
 }
 ?>
