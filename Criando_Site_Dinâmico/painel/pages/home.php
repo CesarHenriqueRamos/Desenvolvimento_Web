@@ -8,6 +8,10 @@
     $visitasHoje = MySql::connect()->prepare("SELECT * FROM `tb_admin.visitas` WHERE dia = ?");
     $visitasHoje->execute(array(date('Y-m-d')));
     $visitasHoje = $visitasHoje->rowCount();
+    //usuarios do painel
+    $usuariosPainel = MySql::connect()->prepare("SELECT * FROM `tb_admin.usuarios`");
+    $usuariosPainel->execute();
+    $usuariosPainel =  $usuariosPainel->fetchAll();
 ?>
 
             
@@ -53,9 +57,37 @@
                 </div><!--row-->
                 <?php } ?>
             </div><!--tabela-responciva-->
-            </div>
-            <div class="box-container w50 marge-right"></div>
-            <div class="box-container w50"></div>
+            </div><!--fim da tabela-->
+            <?php
             
+            if($_SESSION['cargo'] == 2){?>
+            <div class="box-container w100">
+            <h2 class="title"><i class="fas fa-rocket"></i></i> Usuarios do Painel</h2>
+            
+            <div class="tabela-responciva">
+                <div class="row">
+                    <div class="col">
+                        <span>User:</span>
+                    </div><!--col-->
+                    <div class="col">
+                        <span>Nome:</span>
+                    </div><!--col-->
+                    <div class="clear"></div>
+                </div><!--row-->
+                <?php foreach($usuariosPainel as $key =>$value){?>
+                
+                <div class="row">
+                    <div class="col">
+                        <span><?php echo $value['user'];?></span>
+                    </div><!--col-->
+                    <div class="col">
+                        <span><?php echo $value['nome'];?></span>
+                    </div><!--col-->
+                    <div class="clear"></div>
+                </div><!--row-->
+                <?php } ?>
+            </div><!--tabela-responciva-->
+            </div>
+         <?php }?>
             
             
