@@ -39,7 +39,7 @@
         public static function contador(){
             if(!isset($_COOKIE['visita'])){
                 //expira acada sete dias
-                setcookie('visita','true',time()+(60*60*24*7));
+                setcookie('visita','true',time()+(60*60*24));
                 $sql = MySql::connect()->prepare("INSERT INTO `tb_admin.visitas` VALUE (null,?,?)");
                 $sql->execute(array($_SERVER['REMOTE_ADDR'],date('Y-m-d')));
             }
