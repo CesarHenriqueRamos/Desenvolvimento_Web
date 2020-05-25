@@ -1,3 +1,23 @@
+<?php
+    if(isset($_COOKIE['lembrar'])){
+        $user = $_COOKIE['user'];
+        $password = $_COOKIE['password'];
+        $sql = MySql::connect()->prepare("SELECT * FROM `tb_admin.usuarios` WHERE user = ? AND password = ?");
+            $sql->execute(array($user,$password));
+            $info = $sql->fetch();
+            if($sql->rowCount() == 1){
+                 //logado com sucesso
+                 $_SESSION['login'] = true;
+                 $_SESSION['user'] = $user;
+                 $_SESSION['password'] = $password;
+                 $_SESSION['cargo'] = $info['cargo'];
+                 $_SESSION['nome'] = $info['nome'];
+                 $_SESSION['img'] = $info['img'];
+                 header('Location: '.INCLUDE_PATH_PAINEL);
+                 die();
+            }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +50,11 @@
                 $_SESSION['cargo'] = $info['cargo'];
                 $_SESSION['nome'] = $info['nome'];
                 $_SESSION['img'] = $info['img'];
+                if(isset($_POST['lembrar'])){
+                    setcookie('lembrar',true,time()+(60*60*24*30),'/');
+                    setcookie('user',$user,time()+(60*60*24*30),'/');
+                    setcookie('lpassword',$password,time()+(60*60*24*30),'/');
+                }
                 header('Location: '.INCLUDE_PATH_PAINEL);
                 die();
             }else{
@@ -46,7 +71,12 @@
                 <input type="text" name="user" id="" placeholder="Login..." require>
                 <input type="password" name="password" id="" placeholder="Senha..." require>
                 <input type="submit" name="acao" value="Logar">
+                <div class="lembrar">
+                    <label for="lembrar">Lembrar-me</label>
+                    <input type="checkbox" name="lembrar" id="lembrar">
+                </div>
             </form>
+            <div class="clear"></div>
         </div>
     </section>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>

@@ -23,8 +23,8 @@
                 <i class="fa fa-bars" ></i>
             </div>
             <div class="logout">
-            <div class="btn-home">
-                <a  href="<?php echo INCLUDE_PATH_PAINEL; ?>"><i class="fas fa-home"></i> Home</a>
+            <div  class="btn-home" >
+                <a <?php if(@$_GET['url'] == ''){ ?>class="home"<?php } ?> href="<?php echo INCLUDE_PATH_PAINEL; ?>"><i class="fas fa-home"></i> Home</a>
             </div>
             <a  href="<?php echo INCLUDE_PATH_PAINEL; ?>?logout"><i class="fas fa-sign-out-alt"></i> LogOut</a>
             </div>

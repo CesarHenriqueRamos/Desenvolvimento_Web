@@ -59,6 +59,17 @@ body.log{
     color: rgb(35, 10, 88);
     text-align: center;
 }
+div.lembrar{
+    float: right;
+    width: 120px;
+    margin-top: 20px;
+}
+.lembrar input[type = checkbox]{
+    float: right;
+    width: 20px;
+    margin-top: 6px;
+}
+
 input, select{
     margin: 10px 2%;
     width: calc(100% - 4%);
@@ -181,7 +192,7 @@ div.btn-home{
     display: inline;
     
 }
-.btn-home a{
+div.btn-home a.home{
     height: 60px;
     width: 100px;
     padding: 20px 20px;

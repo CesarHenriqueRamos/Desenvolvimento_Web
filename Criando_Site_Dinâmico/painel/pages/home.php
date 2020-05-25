@@ -81,7 +81,7 @@
                         <span><?php echo $value['user'];?></span>
                     </div><!--col-->
                     <div class="col">
-                        <span><?php echo $value['nome'];?></span>
+                        <span><?php echo pegaCargo($value['cargo']);?></span>
                     </div><!--col-->
                     <div class="clear"></div>
                 </div><!--row-->
