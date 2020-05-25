@@ -70,13 +70,16 @@ div.lembrar{
     margin-top: 6px;
 }
 
-input, select{
+input, select,textarea{
     margin: 10px 2%;
     width: calc(100% - 4%);
     padding: 10px;
     border-radius: 20px;
     border: 1px solid #ccc;
     background-color: #E8F0FE;
+}
+textarea{
+    resize: none;
 }
 input[type=submit]{
     width: 130px;

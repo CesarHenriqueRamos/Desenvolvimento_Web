@@ -74,6 +74,30 @@ class Painel{
     $sql = MySql::connect()->prepare("INSERT INTO `tb_admin.usuarios` VALUES(null,?,?,?,?,?)");
     $sql->execute(array($user,$senha,$imagem,$nome,$cargo));
    }
+   //função dimamica para inserção de dados
+   public static function insert($arr){
+       $certo = true;
+       $nomeTabela = $arr['nome_tabela'];
+       $query = "INSERT INTO `$nomeTabela` VALUES(null";
+       foreach ($arr as $key => $value) {
+           $nome = $key;
+           $valor = $value;
+           if($nome == 'acao' || $nome == 'nome_tabela'){
+                continue;
+           }if($valor == ''){
+               $certo = false;
+            break;
+           }
+           $query.=",?";
+           $parametros[] = $value;
+       }
+       $query.= ")";
+       if($certo == true){
+            $sql = MySql::connect()->prepare($query);
+            $sql->execute($parametros);
+       }
+       return $certo;
+   }
 
     
 }
