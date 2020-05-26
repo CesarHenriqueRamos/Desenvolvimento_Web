@@ -95,8 +95,9 @@ class Painel{
        if($certo == true){
             $sql = MySql::connect()->prepare($query);
             $sql->execute($parametros);
-            $sql = MySql::connect()->prepare("UPDATE `$nomeTabela` SET order_id = ?");
-            $sql->execute(array(MySql::connect()->lastInsertId()));
+            $lastId = MySql::connect()->lastInsertId();
+            $sql = MySql::connect()->prepare("UPDATE `$nomeTabela` SET order_id = ? WHERE id = $lastId");
+            $sql->execute(array($lastId));
 
        }
        return $certo;
@@ -166,7 +167,7 @@ class Painel{
         if($orderType == 'up'){
             $infoAtual = Painel::select($tabela,'id=?',$idItem);
             $order_id = $infoAtual['order_id'];
-            $itemBefor = MySql::connect()->prepare("SELECT * FROM `$tabela` WHERE order_id < $order_id LIMIT 1");
+            $itemBefor = MySql::connect()->prepare("SELECT * FROM `$tabela` WHERE order_id < $order_id ORDER BY order_id DESC LIMIT 1");
             $itemBefor->execute();
             if($itemBefor->rowCount()== 0)
                 return;

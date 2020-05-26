@@ -28,7 +28,8 @@
             <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea>
         </div>
         
-        <div class="box-form">    
+        <div class="box-form"> 
+            <input type="hidden" name="order_id" value="tb_site.depoimentos">      
             <input type="hidden" name="nome_tabela" value="tb_site.depoimentos">        
             <input type="submit" name="acao" value="Cadastrar">
         </div>
