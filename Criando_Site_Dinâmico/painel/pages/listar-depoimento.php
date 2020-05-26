@@ -1,7 +1,8 @@
 <?php
     if(isset($_GET['excluir'])){
-        $idExcluir = $_GET['excluir'];
-        echo $idExcluir;
+        $idExcluir = intval($_GET['excluir']);
+        Painel::deletar("tb_site.depoimentos",$idExcluir);
+        Painel::redirect(INCLUDE_PATH_PAINEL.'listar-depoimento');
     }
     $pagineAtual = isset($_GET['pagina'])?(int)$_GET['pagina']: 1;
     $porPagina = 5;
@@ -37,12 +38,11 @@
                     <div class="col">
                         <span><?php echo $value['depoimento'];?></span>
                     </div><!--col-->
-                    <div class="col1 editar">
-                        <a href=""><i class="fas fa-pencil-alt"></i> </a> 
-                    </div><!--col-->
-                    <div class="col1 delete">
-                        <a href="<?php echo INCLUDE_PATH_PAINEL?>listar-depoimento?excluir=<?php echo $value['id']; ?>"><i class="fas fa-trash"></i></a>  
-                    </div><!--col-->
+                    <!--botão de editar-->
+                        <a href=""><div class="col1 editar"><i class="fas fa-pencil-alt"></i></div><!--col--></a> 
+                    <!--botão de deletar-->                    
+                        <a actionBtn="delete" href="<?php echo INCLUDE_PATH_PAINEL?>listar-depoimento?excluir=<?php echo $value['id']; ?>"><div class="col1 delete"><i class="fas fa-trash"></i></div><!--col--></a>  
+                    <!--fim dos botoes-->
                     <div class="clear"></div>
                 </div><!--row-->
                 <?php } ?>

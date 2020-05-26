@@ -349,10 +349,7 @@ div.editar,div.delete{
     background-color: red;
     
 }
-.delete a{
-    width: 100%;
-    background-color: blue;
-}
+
 /*pagineção*/
 .paginacao{
     text-align: center;

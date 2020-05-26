@@ -49,5 +49,13 @@ $(function() {
 			});
 		}
 
-	});
+    });
+    $('[actionBtn = delete]').click(function(){
+        var txt;
+        var r = confirm('Deseja Excluir o Registro?');
+        if(r == true)
+            return true;
+        else
+            return false;
+    })
 })
