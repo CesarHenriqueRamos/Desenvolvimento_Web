@@ -39,7 +39,7 @@
                         <span><?php echo $value['depoimento'];?></span>
                     </div><!--col-->
                     <!--botão de editar-->
-                        <a href=""><div class="col1 editar"><i class="fas fa-pencil-alt"></i></div><!--col--></a> 
+                        <a href="<?php echo INCLUDE_PATH_PAINEL?>editar-depoimento?id=<?php echo $value['id']; ?>"><div class="col1 editar"><i class="fas fa-pencil-alt"></i></div><!--col--></a> 
                     <!--botão de deletar-->                    
                         <a actionBtn="delete" href="<?php echo INCLUDE_PATH_PAINEL?>listar-depoimento?excluir=<?php echo $value['id']; ?>"><div class="col1 delete"><i class="fas fa-trash"></i></div><!--col--></a>  
                     <!--fim dos botoes-->

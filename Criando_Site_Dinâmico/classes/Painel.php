@@ -98,6 +98,37 @@ class Painel{
        }
        return $certo;
    }
+   //update
+   public static function update($arr){
+    $certo = true;
+    $nomeTabela = $arr['nome_tabela'];
+    $first = false;
+    $query = "UPDATE `$nomeTabela` SET ";
+    foreach ($arr as $key => $value) {
+        $nome = $key;
+        $valor = $value;
+        if($nome == 'acao' || $nome == 'nome_tabela' || $nome == 'id'){
+             continue;
+        }if($valor == ''){
+            $certo = false;
+         break;
+        }
+        if($first == false){
+            $first = true;
+            $query.="$nome=?";
+        }else{
+            $query.=",$nome=?";
+        }
+        
+        $parametros[] = $value;
+    }
+    if($certo == true){
+        $parametros[] = $arr['id'];
+         $sql = MySql::connect()->prepare($query." WHERE id = ? ");
+         $sql->execute($parametros);
+    }
+    return $certo;
+}
    //buscar dados padrao
    public static function selectAll($tabela, $start= null, $end = null){
        if($start == null && $end == null){
@@ -120,6 +151,12 @@ class Painel{
     public static function redirect($url){
         echo '<script>location.href="'.$url.'"</script>';
 		die();
+    }
+    //metodo para selecionar apena um registro
+    public static function select($tabela,$query,$arr){
+        $sql = MySql::connect()->prepare("SELECT * FROM `$tabela` WHERE $query"); 
+        $sql->execute(array($arr));
+        return $sql->fetch();
     }
 }
 ?>
