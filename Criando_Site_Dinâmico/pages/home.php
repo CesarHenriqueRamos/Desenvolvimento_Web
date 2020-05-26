@@ -62,11 +62,14 @@
         <div class="container">
             <div class="w50">
                 <h2>Depoimento</h2>
-                <p class="depoimento-dscricao">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <h3 class="depoimento-altor">Autor 1</h3>
+                <?php
+                   $depoimentos = Painel::selectAll('tb_site.depoimentos',0,3);
+                   foreach ($depoimentos as $key => $value) {                      
+                ?>
+                <p class="depoimento-dscricao"><?php echo $value['depoimento'];?></p>
+                <h3 class="depoimento-altor"><?php echo $value['nome'];?></h3>
                 <hr>
-                <p class="depoimento-dscricao">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <h3 class="depoimento-altor">Autor 2</h3>
+                <?php  } ?>
             </div><!--w50-->
             <div id="servicos" class="w50">
                 <h2>Serviços</h2>

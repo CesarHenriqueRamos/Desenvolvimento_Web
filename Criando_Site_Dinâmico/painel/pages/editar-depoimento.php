@@ -17,7 +17,7 @@
     if(isset($_POST['acao'])){
         if(Painel::update($_POST)){
            Painel::alert('sucesso', 'Depoimento Editado com Sucesso');
-           Painel::redirect(INCLUDE_PATH_PAINEL.'editar-depoimento'); 
+           $dados = Painel::select('tb_site.depoimentos', 'id = ?',$id);
         }else{
             Painel::alert('erro', 'Ocorreu um Erro ao Editado'); 
         }

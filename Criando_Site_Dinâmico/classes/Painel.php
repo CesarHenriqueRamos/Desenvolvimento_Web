@@ -95,6 +95,9 @@ class Painel{
        if($certo == true){
             $sql = MySql::connect()->prepare($query);
             $sql->execute($parametros);
+            $sql = MySql::connect()->prepare("UPDATE `$nomeTabela` SET order_id = ?");
+            $sql->execute(array(MySql::connect()->lastInsertId()));
+
        }
        return $certo;
    }
@@ -132,9 +135,9 @@ class Painel{
    //buscar dados padrao
    public static function selectAll($tabela, $start= null, $end = null){
        if($start == null && $end == null){
-          $sql = MySql::connect()->prepare("SELECT * FROM `$tabela`"); 
+          $sql = MySql::connect()->prepare("SELECT * FROM `$tabela` ORDER BY order_id ASC"); 
        }else{
-        $sql = MySql::connect()->prepare("SELECT * FROM `$tabela` LIMIT $start , $end");  
+        $sql = MySql::connect()->prepare("SELECT * FROM `$tabela` ORDER BY order_id ASC LIMIT $start , $end");  
        }
         $sql->execute();
         
@@ -157,6 +160,31 @@ class Painel{
         $sql = MySql::connect()->prepare("SELECT * FROM `$tabela` WHERE $query"); 
         $sql->execute(array($arr));
         return $sql->fetch();
+    }
+    //metodo de ordenação
+    public static function orderItem($tabela,$orderType,$idItem){
+        if($orderType == 'up'){
+            $infoAtual = Painel::select($tabela,'id=?',$idItem);
+            $order_id = $infoAtual['order_id'];
+            $itemBefor = MySql::connect()->prepare("SELECT * FROM `$tabela` WHERE order_id < $order_id LIMIT 1");
+            $itemBefor->execute();
+            if($itemBefor->rowCount()== 0)
+                return;
+            $itemBefor = $itemBefor->fetch();
+            Painel::update(array('nome_tabela'=>$tabela,'id'=>$itemBefor['id'],'order_id'=>$infoAtual['order_id']));
+            Painel::update(array('nome_tabela'=>$tabela,'id'=>$infoAtual['id'],'order_id'=>$itemBefor['order_id']));
+        }else if($orderType == 'dow'){
+            $infoAtual = Painel::select($tabela,'id=?',$idItem);
+            $order_id = $infoAtual['order_id'];
+            $itemBefor = MySql::connect()->prepare("SELECT * FROM `$tabela` WHERE order_id > $order_id ORDER BY order_id ASC LIMIT 1");
+            $itemBefor->execute();
+            if($itemBefor->rowCount()== 0)
+                return;
+            $itemBefor = $itemBefor->fetch();
+            Painel::update(array('nome_tabela'=>$tabela,'id'=>$itemBefor['id'],'order_id'=>$infoAtual['order_id']));
+            Painel::update(array('nome_tabela'=>$tabela,'id'=>$infoAtual['id'],'order_id'=>$itemBefor['order_id']));
+        
+        }
     }
 }
 ?>
