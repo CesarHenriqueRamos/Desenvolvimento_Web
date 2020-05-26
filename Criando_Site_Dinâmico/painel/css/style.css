@@ -305,6 +305,12 @@ p#cargo{
     padding: 5px 0;
 }
 /*tabela responciva depoimento*/
+.scroll{
+    overflow-x: auto;
+}
+.depoimento{
+    min-width: 700px;
+}
 .depoimento .col{
     width: 40%;
     float: left;
@@ -326,7 +332,7 @@ p#cargo{
     border-radius: 20px;
     margin-bottom: 5px;
 }
-.editar,.delete{
+div.editar,div.delete{
     cursor: pointer;
     text-align: center;
     border: 1px solid white;
@@ -341,6 +347,28 @@ p#cargo{
 }
 .delete{
     background-color: red;
+    
+}
+.delete a{
+    width: 100%;
+    background-color: blue;
+}
+/*pagineção*/
+.paginacao{
+    text-align: center;
+    margin: 20px 0;
+}
+.paginacao a{
+    font-size: 14px;
+    margin: 0 8px;
+    display: inline-block;
+    padding: 3px 4px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #666;
+}
+.paginacao a.pag-select{
+    background-color: rgb(220,220,220);
 }
 /*pagina editar usuario*/
 form#editar-usuario{

@@ -99,9 +99,14 @@ class Painel{
        return $certo;
    }
    //buscar dados padrao
-   public static function selectAll($tabela){
-        $sql = MySql::connect()->prepare("SELECT * FROM `$tabela`");
+   public static function selectAll($tabela, $start= null, $end = null){
+       if($start == null && $end == null){
+          $sql = MySql::connect()->prepare("SELECT * FROM `$tabela`"); 
+       }else{
+        $sql = MySql::connect()->prepare("SELECT * FROM `$tabela` LIMIT $start , $end");  
+       }
         $sql->execute();
+        
         return $sql->fetchAll();
    }
     
