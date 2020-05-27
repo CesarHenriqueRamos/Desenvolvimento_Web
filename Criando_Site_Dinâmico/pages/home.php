@@ -75,14 +75,12 @@
                 <h2>Serviços</h2>
                 <div class="servicos">
                     <ul>
-                        <li>Criação de Saites</li>
-                        <li>Criação de Blog</li>
-                        <li>Criação de Loja Virtual</li>
-                        <li>Criação de Saite Empresarial</li>
-                        <li>Criação de Jogos</li>
-                        <li>Pentester</li>
-                        <li>Computer Security</li>
-                        <li>Design Gráfico</li>           
+                <?php 
+                    $servico = Painel::selectAll('tb_site.servico');
+                        foreach($servico as $key => $value){
+                ?>
+                        <li><?php echo $value['servico'];?></li>
+                        <?php } ?>          
                     </ul>
                 </div><!--servicos-->                
             </div><!--w50-->
