@@ -187,8 +187,5 @@ class Painel{
         
         }
     }
-    public static function addSlide(){
-        
-    }
 }
 ?>

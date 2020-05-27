@@ -20,7 +20,9 @@
                 Painel::alert('erro', 'Insira Uma Imagem Valida');
             }else{
                 //função cadastra no banco de dados os dados
-                Painel::addSlide($user,$senha,$imagem,$nome,$cargo);
+                $imagem = Painel::uploadFile($imagem);
+                $arr = ['nome'=>$nome,'slide'=>$imagem,'order_id'=>'0','nome_tabela'=>'tb_site.slides'];
+                Painel::insert($arr);
                 Painel::alert('sucesso', 'Cadastrado com Sucesso');
             }
         }
