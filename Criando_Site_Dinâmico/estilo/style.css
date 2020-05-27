@@ -361,7 +361,7 @@ form#contato input[type=submit]{
 }
 /*slider*/
 section.slider{
-    width: 100%;
+    width: 100%;    
     height: 400px;
     margin-top: 30px;
     position: relative;

@@ -20,7 +20,10 @@
                 Painel::alert('erro', 'Insira Uma Imagem Valida');
             }else{
                 //função cadastra no banco de dados os dados
+                include('../classes/lib/wideImage.php');
                 $imagem = Painel::uploadFile($imagem);
+                //para redimencionar a imagem
+                //WideImage::load('uploads'.$imagem)->resize(100)->saveToFile('uploads'.$imagem);
                 $arr = ['nome'=>$nome,'slide'=>$imagem,'order_id'=>'0','nome_tabela'=>'tb_site.slides'];
                 Painel::insert($arr);
                 Painel::alert('sucesso', 'Cadastrado com Sucesso');

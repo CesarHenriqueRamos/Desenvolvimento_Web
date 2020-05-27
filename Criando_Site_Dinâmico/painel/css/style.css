@@ -380,7 +380,10 @@ form#editar-usuario label{
     padding: 10px;
    
 }
-
+/*mini imagem*/
+.mini{
+    width: 60px;
+}
 @media screen and ( max-width:1200px){
     .box-container .w33{
         height: 100px;
