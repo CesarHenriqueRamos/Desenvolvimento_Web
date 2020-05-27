@@ -436,20 +436,20 @@ span.active-slider{
     .w33{
         width: 50%;
     }
-    .banner-principal form input[type=submit]{
+    section.banner-container form input[type=submit]{
         width: 300px;
         margin-top: 10px;
         margin-left: 10%;
     }
-    .banner-principal form input[type=email]{
+    section.banner-container form input[type=email]{
         width: 300px;
         margin-top: 10px;
         margin-left: 10%;
     }
-    .banner-principal form{
+    section.banner-container form{
         max-width: 400px;
-        
     }
+    
 }
 @media screen and (max-width: 600px){
     
