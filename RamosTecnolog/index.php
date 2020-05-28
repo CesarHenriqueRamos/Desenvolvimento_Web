@@ -92,7 +92,7 @@
 	<script src="<?php echo INCLUDE_PATH; ?>js/scripts.js"></script>
 	<script src="<?php echo INCLUDE_PATH; ?>js/google_maps.js"></script>
 	<script src="<?php echo INCLUDE_PATH; ?>js/slider.js"></script>
-
+	<script src="<?php echo INCLUDE_PATH; ?>js/slider1.js"></script>
 	<?php
 		if($url == 'contato'){
 	?>

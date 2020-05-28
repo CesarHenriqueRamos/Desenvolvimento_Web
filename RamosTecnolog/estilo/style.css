@@ -236,6 +236,7 @@ section.descricao-autor img{
 section.especialidades{
     background-color: #ccc;
     padding: 15px 0;
+    position: relative;
 }
 section.especialidades h1{
     text-align: center;
@@ -251,12 +252,20 @@ section.especialidades h2{
     font-weight: 400;
     padding: 10px 0;
 }
+.box-especialidade{
+    width: 60%;
+    background-color: white;
+    border-radius: 20px;
+    margin: 5px auto;
+    padding-bottom: 10px;
+}
 section.especialidades h3{
     text-align: center;
-    font-size: 14px;
+    font-size: 24px;
 }
 section.especialidades h3 i{
-    background-color: #ccc;
+    
+    font-size: 50px;
 }
 section.especialidades p{
     padding: 10px 15px;
@@ -413,6 +422,25 @@ section.slider div.slider-sigle{
 }
 span.active-slider{
     background-color: #ccc;
+}
+/*bullets slider 2*/
+.bullets1{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+.bullets1 span{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(35, 10, 88);
+    cursor: pointer;
+    margin-left: 10px;
+    display: inline-block;   
+}
+span.active-slider1{
+    background-color: white;
 }
 /*expancivo*/
 @media screen and (max-width: 780px){
