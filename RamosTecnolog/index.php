@@ -2,7 +2,7 @@
 <?php Site::updateUsuarioOnline(); ?>
 <?php Site::contador();?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,8 +63,11 @@
 
 	<div class="container-principal">
 	<?php
-
-		if(file_exists('pages/'.$url.'.php')){
+		
+		if($url == 'servico'){
+			$pagina404 = true;
+			include('pages/servico.php');
+		}else if(file_exists('pages/'.$url.'.php')){
 			include('pages/'.$url.'.php');
 		}else{
 			//Podemos fazer o que quiser, pois a página não existe.

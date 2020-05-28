@@ -21,6 +21,10 @@
             <input type="text" name="servico" id="nome">
         </div>
         <div class="box-form">
+            <label for="url">URL:</label>
+            <input type="text" name="url" id="url" placeholder="nome-do-servico">
+        </div>
+        <div class="box-form">
             <label for="mensagem">Descrição:</label>
             <textarea name="descricao" id="mensagem" cols="30" rows="10"></textarea>
         </div>

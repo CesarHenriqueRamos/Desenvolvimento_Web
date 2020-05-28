@@ -28,8 +28,12 @@
     
     ?>
         <div class="box-form">
-            <label for="nome">Nome:</label>
+            <label for="nome">Serviço:</label>
             <input type="text" name="servico" id="nome" value="<?php echo $dados['servico'] ?>">
+        </div>
+        <div class="box-form">
+            <label for="url">URL:</label>
+            <input type="text" name="url" id="url" placeholder="nome-do-servico" value="<?php echo $dados['url']; ?>">
         </div>
         <div class="box-form">
             <label for="mensagem">Mensagem:</label>
