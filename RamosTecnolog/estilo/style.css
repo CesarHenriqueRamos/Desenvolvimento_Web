@@ -217,7 +217,6 @@ section.descricao-autor{
 section.descricao-autor h2{
     padding: 10px;
     font-size: 28px;
-    margin-top: 70px;
 }
 section.descricao-autor p{
     padding-top: 10px;
@@ -231,12 +230,21 @@ section.descricao-autor img{
     height: 100%;
     max-height: 300px;
     float: right;
-    border-radius:50%;
+    border-radius: 10px;
 }
 /*especialidade*/
 section.especialidades{
     background-color: #ccc;
     padding: 15px 0;
+}
+.box{
+    background-color: white;
+    width: 60%;
+    margin: 20px auto;
+    border-radius: 20px;
+}
+.slider-sigle1{
+    display:none;
 }
 section.especialidades h1{
     text-align: center;
@@ -252,20 +260,12 @@ section.especialidades h2{
     font-weight: 400;
     padding: 10px 0;
 }
-.box-especialidade{
-    width: 60%;
-    background-color: white;
-    border-radius: 20px;
-    margin: 5px auto;
-    padding-bottom: 10px;
-}
 section.especialidades h3{
     text-align: center;
-    font-size: 24px;
+    font-size: 50px;
 }
 section.especialidades h3 i{
-    
-    font-size: 50px;
+    background-color: white;
 }
 section.especialidades p{
     padding: 10px 15px;
@@ -372,6 +372,13 @@ form#contato input[type=submit]{
    cursor: pointer;
     
 }
+form#contato input[type=submit].bt{
+    width: 100%;
+   color: white;
+   background-color: rgb(35, 10, 88);
+   cursor: pointer;
+    
+}
 /*slider*/
 section.slider{
     width: 100%;    
@@ -427,50 +434,43 @@ section.slider div.slider-sigle{
 span.active-slider{
     background-color: #ccc;
 }
-/*bullets slider 2
-.bullets1{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%);
-}
-.bullets1 span{
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: rgb(35, 10, 88);
-    cursor: pointer;
-    margin-left: 10px;
-    display: inline-block;   
-}
-span.active-slider1{
-    background-color: white;
-}*/
-/*classe especifica para serviço*/
-.pg-servico{
-    background-color: #ccc;
-    width: 100%;
-    height: 100%;
-    min-height: 560px;
-}
+/*pagina Serviço*/
 .pg-servico h1{
-    text-align: center;
-    font-size: 26px;
+    font-size: 30px;
     font-weight: lighter;
     color: rgb(35, 10, 88);
-    padding: 10px 20px;
+    text-align: center;
 }
-.box{
+.cor{
+    background-color: #ccc;
+}
+.box1{
     border-radius: 10px;
+    margin-bottom: 25px;
     padding: 30px;
     background-color:white;
 }
-.box h2{
-    color: rgb(35, 10, 88);
-    font-size: 18px;
+.box1 h2{
+    text-align: center;
+    font-size: 22px;
     font-weight: lighter;
     border-bottom: 1px solid rgb(35, 10, 88);
-    margin-bottom: 10px;
+    color: rgb(35, 10, 88);
+    margin-bottom: 15px;
+}
+.box1 h3{
+    font-size: 18px;
+    color: rgb(35, 10, 88);
+    margin-top: 15px;
+}
+div.img{
+    width: 800px;
+    height: 600px;
+    margin: 0 auto;
+}
+div.img img{
+    width: 100%;
+    
 }
 /*expancivo*/
 @media screen and (max-width: 780px){

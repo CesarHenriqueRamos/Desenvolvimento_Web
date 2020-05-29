@@ -15,12 +15,39 @@
     <form action="" method="post" enctype="multipart/form-data" id="editar-usuario">
  <?php
     if(isset($_POST['acao'])){
-        if(Painel::update($_POST)){
-           Painel::alert('sucesso', 'Depoimento Editado com Sucesso');
-           $dados = Painel::select("tb_site.servico", 'id = ?',$id);
-        }else{
-            Painel::alert('erro', 'Ocorreu um Erro ao Editado'); 
+        $servico = $_POST['servico'];
+        $descricao = $_POST['descricao'];
+        $imagem = $_FILES['imagem'];
+        $imagem_atual = $_POST['imagem_atual'];
+        $id = $_POST['id'];
+        $order_id = $_POST['order_id'];
+        $valor = $_POST['valor'];
+        if($imagem['name'] != ''){
+            //existe um upload de imagem
+           if(Painel::imagemValida($imagem)){           
+            Painel::deleteFile($imagem_atual);
+            $imagem = Painel::uploadFile($imagem);
+            $arr = ['servico'=>$servico,'modelo'=>$imagem,'descricao'=>$descricao,'valor'=>$valor,'order_id'=>$order_id,'nome_tabela'=>'tb_site.servico','id'=>$id];
+            if(Painel::update($arr)){
+                Painel::alert('sucesso', 'Atualisado com Sucesso');
+                $dados = Painel::select("tb_site.servico", 'id = ?',$id);
+            }else{
+                Painel::alert('erro', 'Ocorreu Um Erro');
+            }
+           }else{
+                Painel::alert('erro', 'O formato não é valido');
+           }
         }
+        else{
+            $imagem = $imagem_atual;
+            $arr = ['servico'=>$servico,'modelo'=>$imagem,'descricao'=>$descricao,'valor'=>$valor,'order_id'=>$order_id,'nome_tabela'=>'tb_site.servico','id'=>$id];
+            if(Painel::update($arr)){
+                Painel::alert('sucesso', 'Enviado com Sucesso');
+                $dados = Painel::select("tb_site.servico", 'id = ?',$id);
+            }else{
+                Painel::alert('erro', 'Ocorreu Um Erro');
+            }
+        }        
         
     }
  ?>
@@ -32,8 +59,13 @@
             <input type="text" name="servico" id="nome" value="<?php echo $dados['servico'] ?>">
         </div>
         <div class="box-form">
-            <label for="url">URL:</label>
-            <input type="text" name="url" id="url" placeholder="nome-do-servico" value="<?php echo $dados['url']; ?>">
+            <label for="nome">Valor do Serviço:</label>
+            <input type="text" name="valor" id="nome" value="<?php echo $dados['valor'] ?>">
+        </div>
+        <div class="box-form">
+            <label for="img">Imagem:</label>
+            <input type="file" name="imagem" id="img">
+            <input type="hidden" name="imagem_atual" value="<?php echo $dados['modelo'] ?>">
         </div>
         <div class="box-form">
             <label for="mensagem">Mensagem:</label>
@@ -41,8 +73,8 @@
         </div>
         
         <div class="box-form">
-            <input type="hidden" name="id" value="<?php echo $dados['id']; ?>"> 
-            <input type="hidden" name="nome_tabela" value="tb_site.servico">        
+            <input type="hidden" name="id" value="<?php echo $dados['id']; ?>">     
+            <input type="hidden" name="order_id" value="<?php echo $dados['order_id']; ?>">      
             <input type="submit" name="acao" value="Editar">
         </div>
     </form>

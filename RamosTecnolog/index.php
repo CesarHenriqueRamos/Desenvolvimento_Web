@@ -2,7 +2,7 @@
 <?php Site::updateUsuarioOnline(); ?>
 <?php Site::contador();?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
     <link rel="icon" href="<?php echo INCLUDE_PATH; ?>favicon.ico" type="image/x-icon" />
     <title>Site Dinamico</title>
 </head>
-<body>
+<body <?php if($_GET['url'] == 'servico') echo 'class="cor"'; ?>>
 
 <base base="<?php echo INCLUDE_PATH; ?>" />
 	<?php
@@ -63,11 +63,8 @@
 
 	<div class="container-principal">
 	<?php
-		
-		if($url == 'servico'){
-			$pagina404 = true;
-			include('pages/servico.php');
-		}else if(file_exists('pages/'.$url.'.php')){
+
+		if(file_exists('pages/'.$url.'.php')){
 			include('pages/'.$url.'.php');
 		}else{
 			//Podemos fazer o que quiser, pois a página não existe.
@@ -96,6 +93,7 @@
 	<script src="<?php echo INCLUDE_PATH; ?>js/google_maps.js"></script>
 	<script src="<?php echo INCLUDE_PATH; ?>js/slider.js"></script>
 	<script src="<?php echo INCLUDE_PATH; ?>js/slider1.js"></script>
+
 	<?php
 		if($url == 'contato'){
 	?>

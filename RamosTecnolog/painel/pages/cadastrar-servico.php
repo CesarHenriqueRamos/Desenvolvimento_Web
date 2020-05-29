@@ -7,13 +7,26 @@
 	<?php
         if(isset($_POST['acao'])){
                         
-            //Incerção dinamica
-           
-           /**/   if(Painel::insert($_POST)){
-                Painel::alert('sucesso', 'Seviço Cadastrado com Sucesso');
+          //enviado o formulario
+          $servico = $_POST['servico'];
+          $descricao = $_POST['descricao'];
+          $imagem = $_FILES['imagem'];
+          $valor = $_POST['valor'];
+          //validação
+          if($servico == ''){
+              Painel::alert('erro', 'É Necessário Preencher o Campo Serviço');
+          }else if($descricao == ''){
+              Painel::alert('erro', 'É Necessário Preencher o Campo Nome');
+          }else if(Painel::imagemValida($imagem) == false){
+                Painel::alert('erro', 'Insira Uma Imagem Valida');
             }else{
-                Painel::alert('erro', 'Campos Vazios não São Permitidos');
-            }      
+                //função cadastra no banco de dados os dados
+                $imagem = Painel::uploadFile($imagem);
+                //para redimencionar a imagem
+                $arr = ['servico'=>$servico,'modelo'=>$imagem,'descricao'=>$descricao,'valor'=>$valor,'order_id'=>'0','nome_tabela'=>'tb_site.servico'];
+                Painel::insert($arr);
+                Painel::alert('sucesso', 'Cadastrado com Sucesso');
+            }
 	    }
 		?>
         <div class="box-form">
@@ -21,8 +34,12 @@
             <input type="text" name="servico" id="nome">
         </div>
         <div class="box-form">
-            <label for="url">URL:</label>
-            <input type="text" name="url" id="url" placeholder="nome-do-servico">
+            <label for="nome">Valor do Serviço:</label>
+            <input type="text" name="valor" id="nome">
+        </div>
+        <div class="box-form">
+            <label for="img">Imagem:</label>
+            <input type="file" name="imagem" id="img">
         </div>
         <div class="box-form">
             <label for="mensagem">Descrição:</label>
@@ -30,8 +47,7 @@
         </div>
         
         <div class="box-form"> 
-            <input type="hidden" name="order_id" value="0">        
-            <input type="hidden" name="nome_tabela" value="tb_site.servico">        
+                
             <input type="submit" name="acao" value="Cadastrar">
         </div>
     </form>
