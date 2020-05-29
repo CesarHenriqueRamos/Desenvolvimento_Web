@@ -14,7 +14,7 @@
     <link rel="icon" href="<?php echo INCLUDE_PATH; ?>favicon.ico" type="image/x-icon" />
     <title>Site Dinamico</title>
 </head>
-<body <?php if(isset($_GET['url']) && $_GET['url'] == 'servico') echo 'class="cor"'; ?>>
+<body>
 
 <base base="<?php echo INCLUDE_PATH; ?>" />
 	<?php
@@ -93,7 +93,7 @@
 	<script src="<?php echo INCLUDE_PATH; ?>js/google_maps.js"></script>
 	<script src="<?php echo INCLUDE_PATH; ?>js/slider.js"></script>
 	<script src="<?php echo INCLUDE_PATH; ?>js/slider1.js"></script>
-
+	
 	<?php
 		if($url == 'contato'){
 	?>
