@@ -14,7 +14,7 @@
     <link rel="icon" href="<?php echo INCLUDE_PATH; ?>favicon.ico" type="image/x-icon" />
     <title>Site Dinamico</title>
 </head>
-<body <?php if($_GET['url'] == 'servico') echo 'class="cor"'; ?>>
+<body <?php if(isset($_GET['url']) && $_GET['url'] == 'servico') echo 'class="cor"'; ?>>
 
 <base base="<?php echo INCLUDE_PATH; ?>" />
 	<?php
