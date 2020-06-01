@@ -14,5 +14,20 @@ echo nl2br($conteudo);
 //unlink('file.txt');
 */
 //criar pasta
-mkdir('pasta');
+//mkdir('pasta');
+//validar pasta
+/*if(is_dir('pasta')){
+    echo 'é uma pasta valida';
+}*/
+//deletar a pasta
+//rmdir('pasta');
+//ler os arquivos da pasta
+if($handle = opendir('pasta')){
+    //loop
+    while(false != ($file = readdir($handle))){
+        echo $file;
+        echo '<br>';
+    }
+    closedir($handle);
+}
 ?>
