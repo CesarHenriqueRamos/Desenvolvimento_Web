@@ -187,5 +187,22 @@ class Painel{
         
         }
     }
+    //gerar slug
+    public static function generateSlug($str){
+        $str =  mb_strtolower($str);
+        $str =  preg_replace('/(á|â|ã|Á|Â|Ã)/','a',$str);
+        $str =  preg_replace('/(ê|é|É|Ê)/','e',$str);
+        $str =  preg_replace('/(í|Í|î|Î)/','i',$str);
+        $str =  preg_replace('/(ú|Ú|Û|û)/','u',$str);
+        $str =  preg_replace('/(ó|ô|õ|Ô|Ó|Õ)/','o',$str);
+        $str =  preg_replace('/(_|\/|!|\?|#)/','',$str);
+        $str =  preg_replace('/( )/','-',$str);
+        $str =  preg_replace('/(ç|Ç)/','c',$str);
+        $str =  preg_replace('/(-[-]{1,})/','-',$str);
+        $str =  preg_replace('/(,)/','-',$str);
+        $str =  mb_strtolower($str);
+        return $str;
+    }
+    
 }
 ?>
