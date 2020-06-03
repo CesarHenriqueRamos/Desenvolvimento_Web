@@ -2,7 +2,7 @@
 	<div class="overlay"></div><!--overlay-->
 		<div class="center">
 		<form method="post">
-			<h2>Qual o seu melhor e-mail?</h2>
+			<h2>Gostaria de Receber informações em E-mail?</h2>
 			<input type="email" name="email" required />
 			<input type="hidden" name="identificador" value="form_home" />
 			<input type="submit" name="acao" value="Cadastrar!">
@@ -10,80 +10,33 @@
 		</div><!--center-->
 		
 </section><!--banner-principal-->
-    <section class="slider">
-        <div class="container">
-            <div class="slider-title"><h2>Slider</h2></div>
-            <div class="slider-sigle sigle1"> </div>
-            <div class="slider-sigle sigle2"></div>
-            <div class="slider-sigle sigle3"></div> 
-            <div class="bullets">
-               
+<section class="conteudo">
+    <div class="container"></div>
+        <div class="w25">
+            <div class="busca">
+                <h2>Realisar uma busca</h2>
+                <form action="" method="post">
+                    <input type="text" name="pesquisa" id="">
+                    <input type="submit" value="Buscar">
+                </form>
             </div>
-            <div class="clear"></div>
+            <!--teste-->
+            <div class="busca">
+                <h2>Realisar uma busca</h2>
+                <form action="" method="post">
+                    <input type="text" name="pesquisa" id="">
+                    <input type="submit" value="Buscar">
+                </form>
+            </div>
         </div>
-            
-    </section>
-    <section class="descricao-autor">
-        <div class="container">
-            <div id="sobre" class="w50">
-                <h2>Cesar Henrique Ramos</h2>
-                <p>Sou Programador a, sete anos, programo em várias linguagens, especializei na área web, com criações de sites e Aplicativos.</p>
-                <p>Me formei em Análise e Desenvolvimento de Sistema, fiz varias especializações na área.</p>
-            </div><!--w50-->
-            <div class="w50">
-                <!--pegar imagem depois-->
-                <img src="<?php echo INCLUDE_PATH?>images/cesar2.jpg" alt="">
-            </div><!--w50-->
-        </div><!--container-->
-        <div class="clear"></div>
-    </section><!--descrição autor-->
-    <section class="especialidades">
-        <div class="container">
-            <h1 class="title">Especialidades</h1>
-            <div class="w33 especialidade-single">
-                <h2>CSS</h2>
-                <h3><i class="fab fa-css3-alt" style="color: #4C6EF5;"></i></h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            </div><!--w33-->
-            <div class="w33 especialidade-single">                
-                <h2>HTML</h2>
-                <h3><i class="fab fa-html5" style="color:#FD7E14"></i></h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            </div><!--w33-->
-            <div class="w33 especialidade-single">                
-                <h2>JavaScript</h2>
-                <h3><i class="fab fa-js" style="color: #82C91E;"></i></h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            </div><!--w33-->
-        </div><!--container-->
-        <div class="clear"></div>
-    </section><!--especialidades-->
-    <section class="extras">
-        <div class="container">
-            <div class="w50">
-                <h2>Depoimento</h2>
-                <?php
-                   $depoimentos = Painel::selectAll('tb_site.depoimentos',0,3);
-                   foreach ($depoimentos as $key => $value) {                      
-                ?>
-                <p class="depoimento-dscricao"><?php echo $value['depoimento'];?></p>
-                <h3 class="depoimento-altor"><?php echo $value['nome'];?></h3>
-                <hr>
-                <?php  } ?>
-            </div><!--w50-->
-            <div id="servicos" class="w50">
-                <h2>Serviços</h2>
-                <div class="servicos">
-                    <ul>
-                <?php 
-                    $servico = Painel::selectAll('tb_site.servico');
-                        foreach($servico as $key => $value){
-                ?>
-                        <li><?php echo $value['servico'];?></li>
-                        <?php } ?>          
-                    </ul>
-                </div><!--servicos-->                
-            </div><!--w50-->
-        </div><!--container-->
-        <div class="clear"></div>
-    </section><!--extras-->
+        <div class="w75">
+            <h2>Materia modelo</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl. Quis hendrerit dolor magna eget. Imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper. Dolor morbi non arcu risus quis varius quam quisque. Et leo duis ut diam quam nulla porttitor. Pellentesque elit ullamcorper dignissim cras. Vitae justo eget magna fermentum iaculis eu non. Tellus elementum sagittis vitae et leo duis ut diam. Sed cras ornare arcu dui vivamus arcu felis bibendum ut. Ullamcorper velit sed ullamcorper morbi. Mi sit amet mauris commodo quis imperdiet massa tincidunt. Cursus eget nunc scelerisque viverra mauris in aliquam sem. Semper viverra nam libero justo laoreet sit amet cursus sit. Integer vitae justo eget magna fermentum iaculis eu. Mi bibendum neque egestas congue quisque egestas diam in arcu. Eget est lorem ipsum dolor sit amet consectetur adipiscing elit. Pretium fusce id velit ut tortor pretium viverra suspendisse.</p>
+
+            <p>Maecenas ultricies mi eget mauris pharetra et ultrices neque ornare. Eget egestas purus viverra accumsan in. Proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo. Nunc mi ipsum faucibus vitae. Nulla malesuada pellentesque elit eget gravida. Nulla aliquet porttitor lacus luctus. Et netus et malesuada fames ac turpis. Ac tortor dignissim convallis aenean et. Arcu bibendum at varius vel pharetra vel turpis. Nulla pellentesque dignissim enim sit amet venenatis urna. Laoreet suspendisse interdum consectetur libero id faucibus nisl. Vulputate odio ut enim blandit volutpat maecenas volutpat blandit aliquam. Nisl rhoncus mattis rhoncus urna neque. Auctor neque vitae tempus quam pellentesque nec nam aliquam. Lacus vel facilisis volutpat est. Turpis nunc eget lorem dolor sed viverra ipsum nunc. Faucibus et molestie ac feugiat sed. Malesuada proin libero nunc consequat.</p>
+
+            <p>Nunc vel risus commodo viverra maecenas accumsan. Elit pellentesque habitant morbi tristique senectus. Quam vulputate dignissim suspendisse in est ante in. Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant. Et odio pellentesque diam volutpat commodo sed. Facilisi morbi tempus iaculis urna id volutpat lacus laoreet. Dictum fusce ut placerat orci nulla. Integer feugiat scelerisque varius morbi enim nunc. Faucibus scelerisque eleifend donec pretium vulputate sapien. Blandit turpis cursus in hac habitasse. Vulputate mi sit amet mauris commodo quis imperdiet. Egestas egestas fringilla phasellus faucibus.</p>
+        </div>
+    
+    <div class="clear"></div>
+</section>
