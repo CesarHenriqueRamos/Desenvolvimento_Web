@@ -78,5 +78,9 @@
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
 <script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/script.js"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+  tinymce.init({selector:'.tinymce'});
+</script>
 </body>
 </html>

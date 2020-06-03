@@ -21,25 +21,33 @@
         $categoria_id = $_POST['categoria_id'];
         $order_id = $_POST['order_id'];
         $id = $_GET['id'];
-
-        //validação
-        if($titulo == ''){
-            Painel::alert('erro', 'É Necessário Preencher o Campo Titulo');
-        }else if($conteudo == ''){
-            Painel::alert('erro', 'É Necessário Preencher o Campo Conteudo');
-        }else if(Painel::imagemValida($imagem) == false){
-            $imagem = $imagem_atual;
-            $arr = ['categoria_id'=>$categoria_id,'titulo'=>$titulo,'conteudo'=>$conteudo,'capa'=>$imagem,'order_id'=>$order_id,'nome_tabela'=>'tb_site.noticias','id'=>$id];
-            Painel::update($arr);
-            Painel::alert('sucesso', 'Cadastrado com Sucesso');
+        $verificar = MySql::connect()->prepare("SELECT * FROM `tb_site.noticias` WHERE titulo = ? AND id != ?");
+        $verificar->execute(array($titulo,$id));
+        if($verificar->rowCount() == 1){
+            Painel::alert('erro', 'Já Existe Uma Noticia'); 
         }else{
-            //função cadastra no banco de dados os dado
-            $imagem = Painel::uploadFile($imagem);
-            Painel::deleteFile($imagem_atual);
-            $arr = ['categoria_id'=>$categoria_id,'titulo'=>$titulo,'conteudo'=>$conteudo,'capa'=>$imagem,'order_id'=>$order_id,'nome_tabela'=>'tb_site.noticias','id'=>$id];
-            Painel::update($arr);
-            Painel::alert('sucesso', 'Cadastrado com Sucesso');
+            //validação
+            if($titulo == ''){
+                Painel::alert('erro', 'É Necessário Preencher o Campo Titulo');
+            }else if($conteudo == ''){
+                Painel::alert('erro', 'É Necessário Preencher o Campo Conteudo');
+            }else if(Painel::imagemValida($imagem) == false){
+                $imagem = $imagem_atual;
+                $arr = ['categoria_id'=>$categoria_id,'titulo'=>$titulo,'conteudo'=>$conteudo,'capa'=>$imagem,'order_id'=>$order_id,'nome_tabela'=>'tb_site.noticias','id'=>$id];
+                Painel::update($arr);
+                Painel::alert('sucesso', 'Cadastrado com Sucesso');
+                $dados = Painel::select("tb_site.noticias", 'id = ?',$id);
+            }else{
+                //função cadastra no banco de dados os dado
+                $imagem = Painel::uploadFile($imagem);
+                Painel::deleteFile($imagem_atual);
+                $arr = ['categoria_id'=>$categoria_id,'titulo'=>$titulo,'conteudo'=>$conteudo,'capa'=>$imagem,'order_id'=>$order_id,'nome_tabela'=>'tb_site.noticias','id'=>$id];
+                Painel::update($arr);
+                Painel::alert('sucesso', 'Cadastrado com Sucesso');
+                $dados = Painel::select("tb_site.noticias", 'id = ?',$id);
+            }
         }
+        
     }
  ?>
     <form action="" method="post" enctype="multipart/form-data" id="editar-usuario">
@@ -55,14 +63,24 @@
             <textarea name="conteudo" id="conteudo" cols="30" rows="10" ><?php echo $dados['conteudo'] ?></textarea>
         </div>
         <div class="box-form">
+            <label for="categoria">Categoria:</label>
+            <select name="categoria_id" id="">
+            <?php
+            $sql = Painel::selectAll('tb_site.categorias');
+            foreach($sql as $key => $value){
+            ?>
+                <option <?php if($value['id'] == $dados['categoria_id']) echo 'selected'; ?> value="<?php echo $value['id'] ?>"><?php echo $value['nome'] ?></option>
+            <?php } ?>
+            </select>
+        </div>
+        <div class="box-form">
             <label for="img">Imagem:</label>
             <input type="file" name="imagem">
             <input type="hidden" name="imagem_atual" value="<?php echo $dados['capa'] ?>">
         </div>
         <div class="box-form">
             <input type="hidden" name="id" value="<?php echo $dados['id']; ?>"> 
-            <input type="hidden" name="order_id" value="<?php echo $dados['order_id']; ?>"> 
-            <input type="hidden" name="categoria_id" value="<?php echo $dados['categoria_id']; ?>">        
+            <input type="hidden" name="order_id" value="<?php echo $dados['order_id']; ?>">     
             <input type="submit" name="acao" value="Editar">
         </div>
     </form>
