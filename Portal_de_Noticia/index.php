@@ -41,9 +41,6 @@
 			<nav class="desktop right">
 				<ul>
 					<li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
-					<li><a href="<?php echo INCLUDE_PATH; ?>sobre">Sobre</a></li>
-					<li><a href="<?php echo INCLUDE_PATH; ?>servicos">Serviços</a></li>
-					<li><a realtime="contato" href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
 				</ul>
 			</nav>
 			 <nav class="mobile right">
@@ -52,9 +49,6 @@
 			 	</div>
 				<ul>
 					<li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
-					<li><a href="<?php echo INCLUDE_PATH; ?>sobre">Sobre</a></li>
-					<li><a href="<?php echo INCLUDE_PATH; ?>servicos">Serviços</a></li>
-					<li><a realtime="contato" href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
 				</ul>
 			</nav>
 		<div class="clear"></div><!--clear-->
@@ -80,7 +74,7 @@
 
 	</div><!--container-principal-->
 
-	<footer <?php if(isset($pagina404) && $pagina404 == true) echo 'class="fixed"'; ?>>
+	<footer <?php if(isset($pagina404) && $pagina404 == true || @$_GET['url'] == 'noticia') echo 'class="fixed"'; ?>>
 		<div class="container">
 			<p>Todos os direitos reservados</p>
 		</div><!--center-->
