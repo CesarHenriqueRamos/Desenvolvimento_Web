@@ -60,7 +60,7 @@
                        Semper viverra nam libero justo laoreet sit amet cursus sit. Integer vitae justo eget magna fermentum
                         iaculis eu. Mi bibendum neque egestas congue quisque egestas diam in arcu. Eget est lorem ipsum dolor
                      sit amet consectetur adipiscing elit. Pretium fusce id velit ut tortor pretium viverra suspendisse.</p>
-                <a href="<?php echo INCLUDE_PATH; ?>noticia">
+                <a href="<?php echo INCLUDE_PATH; ?>noticia?id=<?php echo $i?>">
                     <div class="bt-ler">Leia mais</div>
                 </a>
             </div><!--conteudo-->
