@@ -46,21 +46,15 @@
             <h2>Visualisação de Post <span>Esporte</span></h2>
             
             <?php 
-            for($i=0; $i < 10; $i++){
+            $dado = Painel::selectAll('tb_site.noticias');
+            foreach($dado as $key => $value){
             ?>
             <div class="conteudo-single">
-                <h3>Materia <?php echo $i ?></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                    dolore magna aliqua. Sollicitudin tempor id eu nisl. Quis hendrerit dolor magna eget. Imperdiet massa
-                     tincidunt nunc pulvinar sapien et ligula ullamcorper. Dolor morbi non arcu risus quis varius quam quisque. 
-                     Et leo duis ut diam quam nulla porttitor. Pellentesque elit ullamcorper dignissim cras. Vitae justo eget
-                      magna fermentum iaculis eu non. Tellus elementum sagittis vitae et leo duis ut diam. Sed cras ornare 
-                      arcu dui vivamus arcu felis bibendum ut. Ullamcorper velit sed ullamcorper morbi. Mi sit amet mauris 
-                      commodo quis imperdiet massa tincidunt. Cursus eget nunc scelerisque viverra mauris in aliquam sem.
-                       Semper viverra nam libero justo laoreet sit amet cursus sit. Integer vitae justo eget magna fermentum
-                        iaculis eu. Mi bibendum neque egestas congue quisque egestas diam in arcu. Eget est lorem ipsum dolor
-                     sit amet consectetur adipiscing elit. Pretium fusce id velit ut tortor pretium viverra suspendisse.</p>
-                <a href="<?php echo INCLUDE_PATH; ?>noticia?id=<?php echo $i?>">
+                <h3><?php echo $value['titulo'] ;?></h3>
+                <div class="mini-img">
+                    <img src="<?php echo INCLUDE_PATH_PAINEL?>uploads/<?php echo $value['capa'];?>" alt="">
+                </div>
+                <a href="<?php echo INCLUDE_PATH; ?>noticia?id=<?php echo $value['id'];?>">
                     <div class="bt-ler">Leia mais</div>
                 </a>
             </div><!--conteudo-->
