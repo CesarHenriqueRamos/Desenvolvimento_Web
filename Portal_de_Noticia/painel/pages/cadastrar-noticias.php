@@ -38,7 +38,7 @@
         </div>
         <div class="box-form">
             <label for="conteudo">Conteudo:</label>
-            <textarea  name="conteudo" id="conteudo" cols="30" rows="10"></textarea>
+            <textarea class="tinymce"  name="conteudo" id="conteudo" cols="30" rows="10"></textarea>
         </div>
         <div class="box-form">
             <label for="categoria">Categoria:</label>

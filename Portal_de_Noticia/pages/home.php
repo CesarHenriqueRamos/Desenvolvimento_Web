@@ -25,11 +25,12 @@
                 <h2>Selecione a Categoria</h2>
                 <form action="" method="post">
                     <select name="" id="">
+                        <option value="" disabled selected>Todas as Categorias</option>
                     <?php 
                         $categoria = Painel::selectAll('tb_site.categorias');
                         foreach($categoria as $key => $value){
                     ?>
-                        <option value="<?php echo $value['nome']; ?>"><?php echo $value['nome']; ?></option>
+                        <option <?php if($value['slug'] == $_GET['cat']) echo 'selected';?> value="<?php echo $value['slug']; ?>"><?php echo $value['nome']; ?></option>
                 <?php    } ?>
                     </select>
                 </form>
@@ -43,10 +44,30 @@
             </div>
         </div>
         <div class="w75">
-            <h2>Visualisação de Post <span>Esporte</span></h2>
+            <?php
+                $url = @$_GET['cat'] ;
+                $categoria = MySql::connect()->prepare('select * FROM `tb_site.categorias` where slug = ?');
+                $categoria->execute(array($url));                
+                //
+                if($categoria->rowCount()){
+                    $categoria = $categoria->fetch();
+                    $cat = $categoria['slug'];
+                }else{
+                    $cat = '';
+                }
+            
+                
+                if($url == '' || $url != $cat){
+                    echo ' <h2>Visualisação de Post</h2>';
+                    $dado = Painel::selectAll('tb_site.noticias');
+                }else{
+                    echo ' <h2>Visualisação de Post <span>'.$categoria['nome'].'</span></h2>';
+                    $dado = Painel::select('tb_site.noticias',"categoria_id = ? ORDER BY order_id DESC",$categoria['id']);
+            }
+            ?>
             
             <?php 
-            $dado = Painel::selectAll('tb_site.noticias');
+            
             foreach($dado as $key => $value){
             ?>
             <div class="conteudo-single">

@@ -160,7 +160,7 @@ class Painel{
     public static function select($tabela,$query,$arr){
         $sql = MySql::connect()->prepare("SELECT * FROM `$tabela` WHERE $query"); 
         $sql->execute(array($arr));
-        return $sql->fetch();
+        return $sql->fetchAll();
     }
     //metodo de ordenação
     public static function orderItem($tabela,$orderType,$idItem){

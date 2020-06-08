@@ -60,8 +60,8 @@
             <input type="text" name="titulo" id="nome" value="<?php echo $dados['titulo'] ?>">
         </div>
         <div class="box-form">
-            <label for="mensagem">Mensagem:</label>
-            <textarea name="conteudo" id="conteudo" cols="30" rows="10" ><?php echo $dados['conteudo'] ?></textarea>
+            <label for="mensagem">Noticias:</label>
+            <textarea class="tinymce" name="conteudo" id="conteudo" cols="30" rows="10" ><?php echo $dados['conteudo'] ?></textarea>
         </div>
         <div class="box-form">
             <label for="categoria">Categoria:</label>
