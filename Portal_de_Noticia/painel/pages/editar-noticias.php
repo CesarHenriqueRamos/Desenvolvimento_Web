@@ -21,6 +21,7 @@
         $categoria_id = $_POST['categoria_id'];
         $order_id = $_POST['order_id'];
         $id = $_GET['id'];
+        $data = date('Y-m-d');
         $verificar = MySql::connect()->prepare("SELECT * FROM `tb_site.noticias` WHERE titulo = ? AND id != ?");
         $verificar->execute(array($titulo,$id));
         if($verificar->rowCount() == 1){
@@ -33,7 +34,7 @@
                 Painel::alert('erro', 'É Necessário Preencher o Campo Conteudo');
             }else if(Painel::imagemValida($imagem) == false){
                 $imagem = $imagem_atual;
-                $arr = ['categoria_id'=>$categoria_id,'titulo'=>$titulo,'conteudo'=>$conteudo,'capa'=>$imagem,'order_id'=>$order_id,'nome_tabela'=>'tb_site.noticias','id'=>$id];
+                $arr = ['categoria_id'=>$categoria_id,'titulo'=>$titulo,'conteudo'=>$conteudo,'data'=>$data,'capa'=>$imagem,'order_id'=>$order_id,'nome_tabela'=>'tb_site.noticias','id'=>$id];
                 Painel::update($arr);
                 Painel::alert('sucesso', 'Cadastrado com Sucesso');
                 $dados = Painel::select("tb_site.noticias", 'id = ?',$id);
@@ -41,7 +42,7 @@
                 //função cadastra no banco de dados os dado
                 $imagem = Painel::uploadFile($imagem);
                 Painel::deleteFile($imagem_atual);
-                $arr = ['categoria_id'=>$categoria_id,'titulo'=>$titulo,'conteudo'=>$conteudo,'capa'=>$imagem,'order_id'=>$order_id,'nome_tabela'=>'tb_site.noticias','id'=>$id];
+                $arr = ['categoria_id'=>$categoria_id,'titulo'=>$titulo,'conteudo'=>$conteudo,'data'=>$data,'capa'=>$imagem,'order_id'=>$order_id,'nome_tabela'=>'tb_site.noticias','id'=>$id];
                 Painel::update($arr);
                 Painel::alert('sucesso', 'Cadastrado com Sucesso');
                 $dados = Painel::select("tb_site.noticias", 'id = ?',$id);

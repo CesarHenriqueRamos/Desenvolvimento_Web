@@ -15,6 +15,7 @@
             $imagem = $_FILES['capa'];
             $conteudo = $_POST['conteudo'];
             $categoria_id = $_POST['categoria'];
+            $data = date('Y-m-d');
             //validação
             if($titulo == ''){
                 Painel::alert('erro', 'É Necessário Preencher o Campo Titulo');
@@ -25,7 +26,7 @@
             }else{
                 //função cadastra no banco de dados os dado
                 $imagem = Painel::uploadFile($imagem);
-                $arr = ['categoria_id'=>$categoria_id,'titulo'=>$titulo,'conteudo'=>$conteudo,'capa'=>$imagem,'order_id'=>'0','nome_tabela'=>'tb_site.noticias'];
+                $arr = ['categoria_id'=>$categoria_id,'titulo'=>$titulo,'conteudo'=>$conteudo,'data'=>$data,'capa'=>$imagem,'order_id'=>'0','nome_tabela'=>'tb_site.noticias'];
                 Painel::insert($arr);
                 Painel::alert('sucesso', 'Cadastrado com Sucesso');
             }
@@ -37,7 +38,7 @@
         </div>
         <div class="box-form">
             <label for="conteudo">Conteudo:</label>
-            <textarea class="tinymce" name="conteudo" id="conteudo" cols="30" rows="10"></textarea>
+            <textarea  name="conteudo" id="conteudo" cols="30" rows="10"></textarea>
         </div>
         <div class="box-form">
             <label for="categoria">Categoria:</label>

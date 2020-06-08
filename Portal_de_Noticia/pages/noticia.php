@@ -1,5 +1,5 @@
 <?php
-$id = 6;
+$id = $_GET['id'];
 $noticia = Painel::select('tb_site.noticias','id=?', $id);
 ?>
 <section class="pg-conteudo-single">
