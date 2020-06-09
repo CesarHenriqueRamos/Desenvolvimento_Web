@@ -62,9 +62,11 @@
                     $cat = '';
                 }
                 if(isset($_POST['pesquisa'])){
-                    /**
-                     * criar a função LIKE %$Pesquisa%
+                    /**pesquisa com base no titulo do da postagem
+                     * deve arumar a pesquisa para só pesquisar os elementos com aqueles textos
+                     * 
                      */
+
                     $pesquisa = $_POST['pesquisa'];
                     $existe = MySql::connect()->prepare("select * FROM `tb_site.noticias` where titulo LIKE '%$pesquisa%'");
                     $existe->execute();
