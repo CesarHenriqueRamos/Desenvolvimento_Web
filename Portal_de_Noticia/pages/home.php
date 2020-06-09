@@ -63,7 +63,7 @@
                 }
                 if(isset($_POST['pesquisa'])){
                     /**pesquisa com base no titulo do da postagem
-                     * deve arumar a pesquisa para só pesquisar os elementos com aqueles textos
+                     * deve arumar a paginação deve sumir
                      * 
                      */
 
@@ -77,11 +77,10 @@
                     
                         foreach($categoria as $key => $value){
                         
-                        $dado = Painel::selectExept("tb_site.noticias",'categoria_id = ?',$existe['categoria_id'],($pagineAtual -1)*$porPagina,$porPagina);
+                        $dado = Painel::selectExept("tb_site.noticias",'id = ?',$existe['id'],($pagineAtual -1)*$porPagina,$porPagina);
                         echo ' <h2>Visualisação de Post <span>'.$value['nome'].'</span></h2>';
-                        //
-                        header('Location:?cat='.$value['slug']);
-                        //header('Location:?cat=');
+                    
+                        
                         }
                     }else{
                         echo ' <h2>Visualisação de Post</h2>';
@@ -115,7 +114,7 @@
             <?php    }   ?>           
             <div class="paginacao">
                 <?php
-                    if($_GET['cat'] == ''){
+                    if($_GET['cat'] == '' || $_POST['pesquisa']){
                         $totalPaginas = ceil(count(Painel::selectAll("tb_site.noticias"))/$porPagina);
                     }else{
                         $totalPaginas = ceil(count(Painel::select("tb_site.noticias",'categoria_id=?',$categoria['id']))/$porPagina);
