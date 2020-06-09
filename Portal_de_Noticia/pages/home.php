@@ -2,7 +2,7 @@
     $pagineAtual = isset($_GET['pagina'])?(int)$_GET['pagina']: 1;
     //alterar para almentar a quantidade de noticias por pagina
     $porPagina = 2;
-   
+    $valido = 0;
 ?>
 <section class="banner-container">	
 		<div class="center">
@@ -61,14 +61,39 @@
                 }else{
                     $cat = '';
                 }
-            
-                
-                if($url == '' || $url != $cat){
-                    echo ' <h2>Visualisação de Post</h2>';
-                    $dado = Painel::selectAll("tb_site.noticias",($pagineAtual -1)*$porPagina,$porPagina);
-                }else{
-                    echo ' <h2>Visualisação de Post <span>'.$categoria['nome'].'</span></h2>';
-                    $dado = Painel::selectExept("tb_site.noticias",'categoria_id = ?',$categoria['id'],($pagineAtual -1)*$porPagina,$porPagina);
+                if(isset($_POST['pesquisa'])){
+                    /**
+                     * criar a função LIKE %$Pesquisa%
+                     */
+                    $pesquisa = $_POST['pesquisa'];
+                    $existe = MySql::connect()->prepare("select * FROM `tb_site.noticias` where titulo LIKE '%$pesquisa%'");
+                    $existe->execute();
+                    if($existe->rowCount()){
+                        $existe = $existe->fetch();
+                        $categoria_id = $existe['categoria_id'];
+                        $categoria = Painel::select('tb_site.categorias','id=?',$categoria_id);
+                    
+                        foreach($categoria as $key => $value){
+                        
+                        $dado = Painel::selectExept("tb_site.noticias",'categoria_id = ?',$existe['categoria_id'],($pagineAtual -1)*$porPagina,$porPagina);
+                        echo ' <h2>Visualisação de Post <span>'.$value['nome'].'</span></h2>';
+                        //
+                        header('Location:?cat='.$value['slug']);
+                        //header('Location:?cat=');
+                        }
+                    }else{
+                        echo ' <h2>Visualisação de Post</h2>';
+                        $dado = Painel::selectAll("tb_site.noticias",($pagineAtual -1)*$porPagina,$porPagina);  
+                        header('Location:?cat=');
+                    }
+                }else{                
+                    if($url == '' || $url != $cat){
+                        echo ' <h2>Visualisação de Post</h2>';
+                        $dado = Painel::selectAll("tb_site.noticias",($pagineAtual -1)*$porPagina,$porPagina);
+                    }else{
+                        echo ' <h2>Visualisação de Post <span>'.$categoria['nome'].'</span></h2>';
+                        $dado = Painel::selectExept("tb_site.noticias",'categoria_id = ?',$categoria['id'],($pagineAtual -1)*$porPagina,$porPagina);
+                    }
                 }
             ?>
             
