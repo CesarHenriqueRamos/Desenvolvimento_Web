@@ -1,3 +1,9 @@
+<?php
+    $pagineAtual = isset($_GET['pagina'])?(int)$_GET['pagina']: 1;
+    //alterar para almentar a quantidade de noticias por pagina
+    $porPagina = 2;
+   
+?>
 <section class="banner-container">	
 		<div class="center">
         
@@ -25,7 +31,7 @@
                 <h2>Selecione a Categoria</h2>
                 <form action="" method="post">
                     <select name="" id="">
-                        <option value="" disabled selected>Todas as Categorias</option>
+                        <option value=""  selected>Todas as Categorias</option>
                     <?php 
                         $categoria = Painel::selectAll('tb_site.categorias');
                         foreach($categoria as $key => $value){
@@ -59,11 +65,11 @@
                 
                 if($url == '' || $url != $cat){
                     echo ' <h2>Visualisação de Post</h2>';
-                    $dado = Painel::selectAll('tb_site.noticias');
+                    $dado = Painel::selectAll("tb_site.noticias",($pagineAtual -1)*$porPagina,$porPagina);
                 }else{
                     echo ' <h2>Visualisação de Post <span>'.$categoria['nome'].'</span></h2>';
-                    $dado = Painel::select('tb_site.noticias',"categoria_id = ? ORDER BY order_id DESC",$categoria['id']);
-            }
+                    $dado = Painel::selectExept("tb_site.noticias",'categoria_id = ?',$categoria['id'],($pagineAtual -1)*$porPagina,$porPagina);
+                }
             ?>
             
             <?php 
@@ -80,12 +86,25 @@
                 </a>
             </div><!--conteudo-->
             <?php    }   ?>           
-           
             <div class="paginacao">
-                <a class="active" href="">1</a>
-                <a href="">2</a>
-                <a href="">3</a>
-            </div>
+                <?php
+                    if($_GET['cat'] == ''){
+                        $totalPaginas = ceil(count(Painel::selectAll("tb_site.noticias"))/$porPagina);
+                    }else{
+                        $totalPaginas = ceil(count(Painel::select("tb_site.noticias",'categoria_id=?',$categoria['id']))/$porPagina);
+                    }
+                    
+                    for($i =1; $i <= $totalPaginas; $i++){
+                        if($i == $pagineAtual)
+                            echo  '<a class="active" href="'.INCLUDE_PATH.'?cat=&pagina='.$i.'">'.$i.'</a>';
+                        else
+                            echo  '<a  href="'.INCLUDE_PATH.'?cat='.$_GET['cat'].'&pagina='.$i.'">'.$i.'</a>';
+
+                    }
+                ?>
+                
+                </div>
+            
         </div>
     
     <div class="clear"></div>

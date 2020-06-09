@@ -40,7 +40,7 @@
 			<div class="logo left"><a href="/">RamosTecnolog</a></div><!--logo-->
 			<nav class="desktop right">
 				<ul>
-					<li><a href="<?php echo INCLUDE_PATH; ?>?cat=tecnologia">Home</a></li>
+					<li><a href="<?php echo INCLUDE_PATH; ?>?cat=">Home</a></li>
 				</ul>
 			</nav>
 			 <nav class="mobile right">
@@ -48,7 +48,7 @@
 			 		<i class="fa fa-bars" aria-hidden="true"></i>
 			 	</div>
 				<ul>
-					<li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
+					<li><a href="<?php echo INCLUDE_PATH; ?>?cat=">Home</a></li>
 				</ul>
 			</nav>
 		<div class="clear"></div><!--clear-->
@@ -86,7 +86,7 @@
 	<script src="<?php echo INCLUDE_PATH; ?>js/scripts.js"></script>
 	<script src="<?php echo INCLUDE_PATH; ?>js/google_maps.js"></script>
 	<script src="<?php echo INCLUDE_PATH; ?>js/slider.js"></script>
-	<?php if(strstr($_GET['cat'] == '') !== false){ ?>
+	<?php if(strstr($_GET['cat'], '?cat=') === false){ ?>
 		<script>
 			$(function(){
 				$('select').change(function(){

@@ -290,6 +290,7 @@ div.autor{
     margin-bottom: 15px;
 }
 .paginacao a{
+    margin-left: 10px;
     text-decoration: none;
     background-color: rgb(50, 0, 158);
     color: white;

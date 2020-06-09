@@ -144,6 +144,18 @@ class Painel{
         
         return $sql->fetchAll();
    }
+   //classe especial
+   public static function selectExept($tabela,$query,$arr=null, $start= null, $end = null){
+    if($start == null && $end == null){
+       $sql = MySql::connect()->prepare("SELECT * FROM `$tabela` ORDER BY order_id ASC"); 
+    }else{
+     $sql = MySql::connect()->prepare("SELECT * FROM `$tabela` WHERE $query ORDER BY order_id ASC LIMIT $start , $end");  
+    }
+     $sql->execute(array($arr));
+     
+     return $sql->fetchAll();
+}
+//fim
    public static function deletar($tabela,$id = false){
         if($id == false){
             $sql = MySql::connect()->prepare("DELETE FROM `$tabela`"); 
