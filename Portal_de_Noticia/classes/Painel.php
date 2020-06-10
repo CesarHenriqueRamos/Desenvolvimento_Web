@@ -215,6 +215,11 @@ class Painel{
         $str =  mb_strtolower($str);
         return $str;
     }
-    
+    //selctSimples
+    public static function selectSimples($tabela, $arr){
+        $dados = MySql::connect()->prepare("SELECT * FROM `$tabela` WHERE  id = ?");
+        $dados->execute(array($arr));
+        return $dados = $dados->fetch();
+    }
 }
 ?>

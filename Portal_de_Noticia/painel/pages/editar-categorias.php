@@ -1,7 +1,10 @@
 <?php
     if(isset($_GET['id'])){
         $id = intval($_GET['id']);
-        $dados = Painel::select("tb_site.categorias", 'id = ?',$id);
+        //$dados = Painel::select("tb_site.categorias", 'id = ?',$id);
+        $dados = MySql::connect()->prepare("SELECT * FROM `tb_site.categorias` WHERE  id = ?");
+        $dados->execute(array($id));
+        $dados = $dados->fetch();
     }else{
         Painel::alert('erro', 'Ocorreu Um Erro');
     }
@@ -23,7 +26,7 @@
         }else{
             if(Painel::update($arr)){
                 Painel::alert('sucesso', 'Categoria Editado com Sucesso');
-                $dados = Painel::select("tb_site.categorias", 'id = ?',$id);
+                $dados = Painel::selectSimples("tb_site.categorias",$id);
             }else{
                 Painel::alert('erro', 'Ocorreu um Erro ao Editado'); 
             }

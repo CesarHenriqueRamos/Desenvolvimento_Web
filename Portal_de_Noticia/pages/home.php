@@ -64,23 +64,24 @@
                 if(isset($_POST['pesquisa'])){
                     /**pesquisa com base no titulo do da postagem 
                      */
-
+                    
                     $pesquisa = $_POST['pesquisa'];
                     $existe = MySql::connect()->prepare("select * FROM `tb_site.noticias` where titulo LIKE '%$pesquisa%'");
                     $existe->execute();
                     if($existe->rowCount()){
                         $existe = $existe->fetch();
                         $categoria_id = $existe['categoria_id'];
-                        $categoria = Painel::select('tb_site.categorias','id=?',$categoria_id);
-                    
-                        foreach($categoria as $key => $value){
-                        
+                        $categoria = Painel::select('tb_site.categorias','id=?',$categoria_id);?>
+                        <script>
+                            window.history.pushState('','','?cat=');
+                        </script>
+                        <?php foreach($categoria as $key => $value){                        
                         $dado = Painel::selectExept("tb_site.noticias",'id = ?',$existe['id'],($pagineAtual -1)*$porPagina,$porPagina);
                         echo ' <h2>Visualisação de Post <span>'.$value['nome'].'</span></h2>';
-                    
-                        
+
                         }
                     }else{
+                        
                         echo ' <h2>Visualisação de Post</h2>';
                         $dado = Painel::selectAll("tb_site.noticias",($pagineAtual -1)*$porPagina,$porPagina);  
                         header('Location:?cat=');

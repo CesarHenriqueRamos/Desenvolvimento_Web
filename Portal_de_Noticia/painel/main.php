@@ -50,15 +50,7 @@
                
             </div><!--boo-usuario-->
             <div class="items-menu">
-                    <h2>Cadastro</h2>
-                        <a <?php selecionadoMenu('cadastrar-depoimento'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-depoimento">Cadastro de Depoimento</a>
-                        <a <?php selecionadoMenu('cadastrar-servico'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-servico">Cadastro de Serviço</a>
-                        <a <?php selecionadoMenu('cadastrar-slides'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-slides">Cadastro de Slides</a>
-                    <h2>Gestão</h2>
-                        <a <?php selecionadoMenu('listar-depoimento'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>listar-depoimento">Lista de Depoimento</a>
-                        <a <?php selecionadoMenu('listar-servico'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>listar-servico">Lista de Serviço</a>
-                        <a <?php selecionadoMenu('listar-slides'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>listar-slides">Lista de Slides</a>
-                    <h2>Administrador</h2>
+                   <h2>Administrador</h2>
                         <a <?php selecionadoMenu('editar-usuario'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>editar-usuario">Editar Usuario</a>
                         <a <?php selecionadoMenu('adiciaonar-usuario'); ?><?php verificaPermissaoMenu(2);?> href="<?php echo INCLUDE_PATH_PAINEL?>adiciaonar-usuario">Adicionar Usuário</a>
                     <!--<h2>Configuração Geral</h2>

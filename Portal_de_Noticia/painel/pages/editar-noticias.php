@@ -1,7 +1,7 @@
 <?php
     if(isset($_GET['id'])){
         $id = intval($_GET['id']);
-        $dados = Painel::select("tb_site.noticias", 'id = ?',$id);
+        $dados = Painel::selectSimples("tb_site.noticias", $id);
     }else{
         Painel::alert('erro', 'Ocorreu Um Erro');
         Painel::redirect(INCLUDE_PATH_PAINEL.'listar-servico'); 
@@ -37,7 +37,7 @@
                 $arr = ['categoria_id'=>$categoria_id,'titulo'=>$titulo,'conteudo'=>$conteudo,'data'=>$data,'capa'=>$imagem,'order_id'=>$order_id,'nome_tabela'=>'tb_site.noticias','id'=>$id];
                 Painel::update($arr);
                 Painel::alert('sucesso', 'Cadastrado com Sucesso');
-                $dados = Painel::select("tb_site.noticias", 'id = ?',$id);
+                $dados = Painel::selectSimples("tb_site.noticias", $id);
             }else{
                 //função cadastra no banco de dados os dado
                 $imagem = Painel::uploadFile($imagem);
@@ -45,7 +45,7 @@
                 $arr = ['categoria_id'=>$categoria_id,'titulo'=>$titulo,'conteudo'=>$conteudo,'data'=>$data,'capa'=>$imagem,'order_id'=>$order_id,'nome_tabela'=>'tb_site.noticias','id'=>$id];
                 Painel::update($arr);
                 Painel::alert('sucesso', 'Cadastrado com Sucesso');
-                $dados = Painel::select("tb_site.noticias", 'id = ?',$id);
+                $dados = Painel::selectSimples("tb_site.noticias", $id);
             }
         }
         
