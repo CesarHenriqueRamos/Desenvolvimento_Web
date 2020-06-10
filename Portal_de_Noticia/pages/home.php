@@ -62,9 +62,7 @@
                     $cat = '';
                 }
                 if(isset($_POST['pesquisa'])){
-                    /**pesquisa com base no titulo do da postagem
-                     * deve arumar a paginação deve sumir
-                     * 
+                    /**pesquisa com base no titulo do da postagem 
                      */
 
                     $pesquisa = $_POST['pesquisa'];
@@ -114,19 +112,23 @@
             <?php    }   ?>           
             <div class="paginacao">
                 <?php
-                    if($_GET['cat'] == '' || $_POST['pesquisa']){
+                    if($_GET['cat'] == '' || isset($_POST['pesquisa'])){
                         $totalPaginas = ceil(count(Painel::selectAll("tb_site.noticias"))/$porPagina);
                     }else{
                         $totalPaginas = ceil(count(Painel::select("tb_site.noticias",'categoria_id=?',$categoria['id']))/$porPagina);
                     }
-                    
-                    for($i =1; $i <= $totalPaginas; $i++){
+                    if(isset($_POST['pesquisa'])){
+
+                    }else{
+                        for($i =1; $i <= $totalPaginas; $i++){
                         if($i == $pagineAtual)
                             echo  '<a class="active" href="'.INCLUDE_PATH.'?cat=&pagina='.$i.'">'.$i.'</a>';
                         else
                             echo  '<a  href="'.INCLUDE_PATH.'?cat='.$_GET['cat'].'&pagina='.$i.'">'.$i.'</a>';
 
+                        }
                     }
+                    
                 ?>
                 
                 </div>
