@@ -1,0 +1,9 @@
+img{
+    width: 500px;
+    height: 500px;
+    float: left;
+    margin: 20px;
+}
+.clear{
+    clear: both;
+}
