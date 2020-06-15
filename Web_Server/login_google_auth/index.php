@@ -1,14 +1,16 @@
 <?php
+//id:765535993255-kasena55lhrk506noa5irbhemrv0mbin.apps.googleusercontent.com
+//chave secreta:XqsQBo2OPW8E0-YNR_Gf3pOg
 	session_start();
 	require('vendor/autoload.php');
 
 
 	$gClient = new Google_Client();
 
-	$gClient->setClientId("");
-	$gClient->setClientSecret("");
+	//$gClient->setClientId("765535993255-kasena55lhrk506noa5irbhemrv0mbin.apps.googleusercontent.com");
+	//$gClient->setClientSecret("XqsQBo2OPW8E0-YNR_Gf3pOg");
 
-	$gClient->setRedirectUri('http://localhost/aula_login_google/index.php');
+	$gClient->setRedirectUri('http://localhost/Meus_Projetos/Desenvolvimento_Web/Desenvolvimento_Web/Web_Server/login_google_auth/index.php');
 
 	$gClient->addScope('email');
 
