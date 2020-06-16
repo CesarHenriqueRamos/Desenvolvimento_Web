@@ -81,7 +81,7 @@
     <section class="diferenciais text-center">
       <h2>Conheça nossa empresa</h2>
         <div class="container diferenciais-container">
-            <div class="row"><?php echo $sobre; ?></div>
+            <div class="row"><?php //echo $sobre; ?></div>
         </div>
       </section>
 
@@ -93,7 +93,7 @@
                   /*$selectMembros = $pdo->prepare("SELECT * FROM `tb_equipe`");
                   $selectMembros->execute();
                   $membros = $selectMembros->fetchAlL();
-                  for($i = 0; $i < count($membros); $i++){
+                  for($i = 0; $i < count($membros); $i++){*/
               ?>
                 <div class="col-md-6">
                     <div class="equipe-single">
@@ -104,13 +104,13 @@
                                 </div>
                             </div>
                             <div class="col-md-10">
-                                <h3><?php echo $membros[$i]['nome'] ?></h3>
-                                <p><?php echo $membros[$i]['descricao']; ?></p>
+                                <h3><?php// echo $membros[$i]['nome'] ?></h3>
+                                <p><?php// echo $membros[$i]['descricao']; ?></p>
                             </div>
                         </div>
                     </div>
                 </div>  
-                <?php } */?>       
+                <?php// }?>       
             </div>
         </div><!--equipe-container-->
       </section>

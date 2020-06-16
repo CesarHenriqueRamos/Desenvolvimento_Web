@@ -48,42 +48,70 @@
         </div>
      </div>
     </section>
-    <section class="equipe" id="equipe">
-        <div class="container">
-            <h1>Equipe</h1>
-            <div class="col-md-3">
-                <h4><strong>Nome:</strong>Cesar Henrique Ramos  </h4>  
-                <p><strong>Cargo:</strong>Programador</p>
-            </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-3">
-                <h4><strong>Nome:</strong>Maria</h4>  
-                <p><strong>Cargo:</strong>Programador</p>
-            </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-3">
-                <h4><strong>Nome:</strong>Pedro</h4>  
-                <p><strong>Cargo:</strong>Programador</p>
-            </div>
-            <div class="col-md-1"></div>
+    <section class="lista">
+      <div class="container">
+        <div class="col-md-4">
+             <h2><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Entre na nossa lista!</h2>
         </div>
-    </section>
-    <section id="sobre" class="sobre">
+        <div class="col-md-8">
+        <form>
+          
+            <div class="col-sm-10">
+              <label class="sr-only" for="inlineFormInputName">Email</label>
+              <input type="text" id="inlineFormInputName" placeholder="exemplo@exemplo.com"><input type="submit" value="Enviar">
+              
+            </div>
+            
+            <div class="col-md-2">
+              
+            </div>
+          
+        </form>
+        </div>
+      </div>
+    </section><!--lista-->
+     <section id="sobre" class="sobre">
         <div class="container">
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
-                    <h2>Sobre a Empresa</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Posuere ac ut consequat semper. Interdum velit laoreet id donec ultrices tincidunt arcu. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam. Sed nisi lacus sed viverra tellus in hac habitasse platea. Iaculis eu non diam phasellus vestibulum lorem sed risus. Augue lacus viverra vitae congue. Massa eget egestas purus viverra accumsan in nisl nisi scelerisque. Bibendum arcu vitae elementum curabitur vitae nunc sed velit. Ultricies leo integer malesuada nunc. Mi proin sed libero enim sed faucibus. Ac tincidunt vitae semper quis lectus nulla. Vel orci porta non pulvinar neque laoreet suspendisse. Sit amet tellus cras adipiscing. Arcu risus quis varius quam quisque id.
-
-In hendrerit gravida rutrum quisque non tellus orci ac. Orci nulla pellentesque dignissim enim sit amet venenatis. Tristique senectus et netus et malesuada fames ac turpis. Pulvinar etiam non quam lacus suspendisse faucibus. Lobortis feugiat vivamus at augue eget. Laoreet id donec ultrices tincidunt arcu non sodales neque sodales. Sed arcu non odio euismod lacinia at. Vitae turpis massa sed elementum tempus egestas sed. Vitae congue eu consequat ac felis donec et odio pellentesque. Tincidunt eget nullam non nisi est sit. Gravida quis blandit turpis cursus in hac habitasse platea dictumst. Lectus urna duis convallis convallis tellus id interdum velit. Duis ultricies lacus sed turpis tincidunt id aliquet. Ullamcorper sit amet risus nullam eget. Consectetur adipiscing elit pellentesque habitant morbi.
-
-Volutpat sed cras ornare arcu dui vivamus. Placerat orci nulla pellentesque dignissim enim sit. Phasellus faucibus scelerisque eleifend donec. Ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget. Aliquet nec ullamcorper sit amet. Fringilla phasellus faucibus scelerisque eleifend. Felis eget velit aliquet sagittis id. Morbi tristique senectus et netus et. Integer quis auctor elit sed vulputate mi. Augue lacus viverra vitae congue eu consequat ac felis. Luctus accumsan tortor posuere ac ut consequat semper viverra nam.</p>
+                    <h2>Depoimento</h2>
+                    <p>Lorem ipsum dolor sit amet,
+                       consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Posuere ac ut consequat semper. Interdum velit laoreet id donec ultrices tincidunt arcu. Odio 
+                        ut enim blandit volutpat maecenas volutpat blandit aliquam. Sed nisi lacus sed viverra tellus
+                         in hac habitasse platea. Iaculis eu non diam phasellus vestibulum lorem sed risus. Augue lacus
+                          viverra vitae congue. Massa eget egestas purus viverra accumsan in nisl nisi scelerisque.
+                           Bibendum arcu vitae elementum curabitur vitae nunc sed velit. Ultricies leo integer malesuada nunc.
+                            Mi proin sed libero enim sed faucibus. Ac tincidunt vitae semper quis lectus nulla. Vel orci porta
+                             non pulvinar neque laoreet suspendisse. Sit amet tellus cras adipiscing. Arcu risus quis varius
+                              quam quisque id.</p>
                 </div>
                 <div class="col-md-2"></div>
             </div>
         </div>
-    </section>
+    </section><!--depoimento-->
+    <section class="equipe" id="equipe">
+        <div class="container">
+            <h1>Equipe</h1>
+            <div class="col-md-5">
+              <div class="img">
+                  <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                </div>
+                <h4><strong>Nome:</strong>Cesar Henrique Ramos  </h4>  
+                <p><strong>Cargo:</strong>Programador</p>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-5">
+                <div class="img">
+                  <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                </div>
+                <h4><strong>Nome:</strong>Maria</h4>  
+                <p><strong>Cargo:</strong>Programador</p>
+            </div>
+        </div>
+    </section><!--equipe-->
+   
     <section class="form" id="contato">
         <div class="container">
           <div class="row">
@@ -108,40 +136,40 @@ Volutpat sed cras ornare arcu dui vivamus. Placerat orci nulla pellentesque dign
             <div class="col-md-6">
             <h1>Valores dos Serviços</h1>
             <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Handle</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Larry</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table>
             </div>
           </div>
             
         </div>
-    </section>
+    </section><!--sessão-->
     <footer class="footer">
       <div class="container">
         <p class="text-center">Todos os direitos Reservados</p>
