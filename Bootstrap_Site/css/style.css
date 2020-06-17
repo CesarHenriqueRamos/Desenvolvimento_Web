@@ -28,6 +28,7 @@ section.equipe div > div.col-md-5{
     border-radius: 20px;
     padding: 20px;
     box-shadow: 5px 5px 5px black;
+    margin-top: 20px;
 }
 section.equipe h4,p{
     color: #26A599;
@@ -107,3 +108,4 @@ footer p{
     width: 100px;
     padding: 5px;
 }
+

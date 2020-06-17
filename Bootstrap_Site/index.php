@@ -58,7 +58,7 @@
           
             <div class="col-sm-10">
               <label class="sr-only" for="inlineFormInputName">Email</label>
-              <input type="text" id="inlineFormInputName" placeholder="exemplo@exemplo.com"><input type="submit" value="Enviar">
+              <input type="text" name="email" id="inlineFormInputName" placeholder="exemplo@exemplo.com"><input type="submit" name="acao"  value="Enviar">
               
             </div>
             
@@ -75,17 +75,13 @@
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
-                    <h2>Depoimento</h2>
-                    <p>Lorem ipsum dolor sit amet,
-                       consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Posuere ac ut consequat semper. Interdum velit laoreet id donec ultrices tincidunt arcu. Odio 
-                        ut enim blandit volutpat maecenas volutpat blandit aliquam. Sed nisi lacus sed viverra tellus
-                         in hac habitasse platea. Iaculis eu non diam phasellus vestibulum lorem sed risus. Augue lacus
-                          viverra vitae congue. Massa eget egestas purus viverra accumsan in nisl nisi scelerisque.
-                           Bibendum arcu vitae elementum curabitur vitae nunc sed velit. Ultricies leo integer malesuada nunc.
-                            Mi proin sed libero enim sed faucibus. Ac tincidunt vitae semper quis lectus nulla. Vel orci porta
-                             non pulvinar neque laoreet suspendisse. Sit amet tellus cras adipiscing. Arcu risus quis varius
-                              quam quisque id.</p>
+                <?php
+                 $pdo = new PDO('mysql:host=localhost;dbname=saite_bootstrap','root','');
+                 $sobre = $pdo->prepare("SELECT * FROM sobre");
+                 $sobre->execute();
+                 $sobre = $sobre->fetch();
+                 echo $sobre['sobre'];
+                 ?>
                 </div>
                 <div class="col-md-2"></div>
             </div>
@@ -94,21 +90,24 @@
     <section class="equipe" id="equipe">
         <div class="container">
             <h1>Equipe</h1>
+            <?php
+                 $pdo = new PDO('mysql:host=localhost;dbname=saite_bootstrap','root','');
+                 $equipe = $pdo->prepare("SELECT * FROM equipe");
+                 $equipe->execute();
+                 $equipe = $equipe->fetchAll();
+                 foreach($equipe as $key => $value){
+                 ?>
             <div class="col-md-5">
               <div class="img">
                   <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                 </div>
-                <h4><strong>Nome:</strong>Cesar Henrique Ramos  </h4>  
-                <p><strong>Cargo:</strong>Programador</p>
+                <h4><strong>Nome:</strong><?php echo $value['nome'] ?></h4>  
+                <p><strong>Cargo:</strong><?php echo $value['descricao'] ?></p>
             </div>
-            <div class="col-md-2"></div>
-            <div class="col-md-5">
-                <div class="img">
-                  <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                </div>
-                <h4><strong>Nome:</strong>Maria</h4>  
-                <p><strong>Cargo:</strong>Programador</p>
-            </div>
+            <div class="col-md-1"></div>
+            
+                 <?php } ?>
+            
         </div>
     </section><!--equipe-->
    
@@ -130,7 +129,7 @@
                 <label for="exampleTextarea">Mensagem</label>
                 <textarea name="mensagem" class="form-control" id="exampleTextarea" rows="7"></textarea>
             </div>            
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <input type="submit" name="acao" class="btn btn-primary" value="Enviar">
             </form>
             </div>
             <div class="col-md-6">
