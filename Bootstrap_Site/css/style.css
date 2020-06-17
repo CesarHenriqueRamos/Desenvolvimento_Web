@@ -50,9 +50,12 @@ section.lista{
     color: white;
     font-size: 22px;
 }
-section.sobre h2, section.sobre p{
+section.sobre h2{
     color: #444;
-    padding: 20px 0;
+    padding: 40px 0 20px 0;
+}
+section.sobre p{
+    color: #444;
 }
 section.sobre h2{
     text-align: center;

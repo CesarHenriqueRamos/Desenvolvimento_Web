@@ -46,7 +46,7 @@
             <li><a ref_sys="lista_equipe" href="#contact">Lista Equipe</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="?sair"><span class="glyphicon glyphicon-off"></span> Sair!</a></li>
+            <li><a href="http://localhost/Meus_Projetos/Desenvolvimento_Web/Desenvolvimento_Web/Bootstrap_Site/"><span class="glyphicon glyphicon-off"></span> Sair!</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
