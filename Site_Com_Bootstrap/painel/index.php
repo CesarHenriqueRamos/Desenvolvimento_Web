@@ -1,3 +1,27 @@
+<?php
+  $pdo = new PDO('mysql:host=localhost;dbname=saite_com_bootstrap','root','');
+  if(isset($_POST['atualisa'])){
+    $sobre = $_POST['sobre'];
+    $id = 1;
+    $atualisa = $pdo->prepare("UPDATE tb_sobre SET sobre = ? WHERE id = ?");
+    $atualisa->execute(array($sobre, $id));
+  }
+  //buscar dados do sobre
+  $sobre = $pdo->prepare("SELECT * FROM tb_sobre");
+  $sobre->execute();
+  $sobre = $sobre->fetch();
+  //cadastrar novo integrante
+  if(isset($_POST['cadastrar'])){
+    $nome = $_POST['nome_menbro'];
+    $descricao = $_POST['descricao'];
+    if($nome == '' || $descricao == ''){
+      echo 'falhou';
+    }else{
+      $cadastrar = $pdo->prepare("INSERT INTO tb_equipe VALUES(null, ?, ?)");
+      $cadastrar->execute(array($nome,$descricao));
+    }
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +51,7 @@
             <li><a ref_sys="lista_equipe" href="#contact">Lista Equipe</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="http://localhost/Meus_Projetos/Desenvolvimento_Web/Desenvolvimento_Web/Bootstrap_Site/"><span class="glyphicon glyphicon-off"></span> Sair!</a></li>
+            <li><a href="http://localhost/Meus_Projetos/Desenvolvimento_Web/Desenvolvimento_Web/Site_Com_Bootstrap/"><span class="glyphicon glyphicon-off"></span> Sair!</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -71,7 +95,7 @@
                             <form method="post">
                               <div class="form-group">
                                 <label for="email">Código HTML:</label>
-                                <textarea name="sobre" style="height: 140px;resize: vertical;" class="form-control"></textarea>
+                                <textarea name="sobre" style="height: 140px;resize: vertical;" class="form-control"><?php echo $sobre['sobre'];?></textarea>
                               </div>
                               <input type="hidden" name="editar_sobre" value="">
                               <button type="submit" name="atualisa" class="btn btn-default">Submit</button>
@@ -82,7 +106,7 @@
                     </div>
                     <div id="cadastrar_equipe_section" class="panel painel-default">
                     <div class="panel-heading cor-padrao">
-                            <h3 class="panel-title">Membros da Equipe</h3>
+                            <h3 class="panel-title">Cadastrar Membro da Equipe</h3>
                           </div>
                           <div class="panel-body">
                             <form method="post">
@@ -95,12 +119,12 @@
                                 <textarea name="descricao" style="height: 140px;resize: vertical;" class="form-control"></textarea>
                               </div>
                               <input type="hidden" name="cadastrar_equipe" value="">
-                              <button type="submit" name="atualisa" class="btn btn-default">Submit</button>
+                              <button type="submit" name="cadastrar" class="btn btn-default">Cadastrar</button>
                             </form>
-
-
+                           
                           </div>
                     </div>
+                   
                     <div id="lista_equipe_section" class="panel painel-default">
                     <div class="panel-heading cor-padrao">
                             <h3 class="panel-title">Sobre</h3>
@@ -115,14 +139,21 @@
                                 </tr>
                               </thead>
                               <tbody>
-                              
+                              <?php
+                              $equipe = $pdo->prepare("SELECT * FROM tb_equipe");
+                              $equipe->execute();
+                              $equipe = $equipe->fetchAll();
+                              foreach($equipe as $key => $value){
+                              ?>
                                 <tr>
-                                  <td></td>
-                                  <td></td>
-                                  <td><button id_membro="<?php //echo $value['id']; ?>" type="button" class="deletar-membro btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash"></span> Excluir</button></td>
+                                  <td><?php echo $value['id']; ?></td>
+                                  <td><?php echo $value['nome']; ?></td>
+                                  <td><button id_membro="<?php echo $value['id']; ?>" type="button" class="deletar-membro btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash"></span> Excluir</button></td>
                                 </tr>
+                              <?php } ?>
                               </tbody>
                             </table>
+                    
                           </div>
                     </div>
                 </div><!--col-md-9-->
