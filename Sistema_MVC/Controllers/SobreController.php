@@ -2,13 +2,13 @@
 
 namespace Controllers;
 
-class HomeController{
+class SobreController{
     private $view;
     public function __construct(){
-        $this->view = new \Views\MainView('home');
+        $this->view = new \Views\MainView('sobre');
     }
     public function executar(){
-        $this->view->render(array('titulo'=>'Home'));
+        $this->view->render(array('titulo'=>'Sobre'));
     }
 }
 ?>
