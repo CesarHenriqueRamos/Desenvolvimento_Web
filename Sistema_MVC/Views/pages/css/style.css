@@ -9,6 +9,7 @@ html,body{
 .container{
     width: 1024px;
     padding: 0 2%;
+    margin: 0 auto;
 }
 .clear{
     clear: both;
@@ -54,5 +55,69 @@ footer{
 footer p{
     color: white;
     margin: 0 auto;
+    width: 200px;
+}
+section.titulo{
+    width: 100%;
+    height: 60px;
+    background-color: #1e88e5;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+div.topo{
+    width: 200px;
+    border-top: 3px solid white;
+    margin: 0 auto;
+}
+/*sobre*/
+div.texto{
+    max-width: 600px;
+    width: 100%;
+    margin: 25px auto;
+    font-size: 18px;
+}
+div.texto p{
+    margin-top: 10px;
+}
+/*contato*/
+section.contato{
+    width: 100%;
+    max-width: 600px;
+    margin: 25px auto;
+}
+div.box{
+    width: 100%;
+    margin: 25px 0;
+}
+div.box p{
+    float: left;
     width: 300px;
+    min-width: 300px;
+    margin-top: 10px;
+    margin-left: 5px;
+    font-size: 24px;
+}
+i{
+    min-width: 40px;
+    font-size: 45px;
+    float: left;
+}
+/*home*/
+.alerta{
+	margin:10px 0;
+	border-left: 4px solid #4b4b4b;
+	background: rgb(225,225,225);
+	padding: 8px;
+}
+
+.alerta h3{
+	font-size: 18px;
+	font-weight: normal;
+	color: #4b4b4b;
+}
+.principal h2{
+    margin-top: 40px;
+    font-size: 40px;
+    color: #4b4b4b;
 }
