@@ -28,5 +28,8 @@ function teste() :?string{
     return 9;
 }
 $numero = teste();
-var_dump($numero);
+//var_dump($numero);
+//mutiplas variaveis em uma linha
+$numero_1 = $numero_2 = 9;
+echo $numero_1;
 ?>
