@@ -9,7 +9,7 @@ class Jogo {
     cenario = new Cenario(imagemCenario, 3);
     pontuacao = new Pontuacao()
     vida = new Vida(fita.configuracoes.vidaMaxima, fita.configuracoes.vidaInicial)
-
+    
     personagem = new Personagem(matrizPersonagem, imagemPersonagem, 0, 30, 110, 135, 220, 270);
     const inimigo = new Inimigo(matrizInimigo, imagemInimigo, width - 52, 30, 52, 52, 104, 104, 10);
     const inimigoVoador = new Inimigo(matrizInimigoVoador, imagemInimigoVoador, width - 52, 200, 100, 75, 200, 150, 10);
@@ -26,11 +26,10 @@ class Jogo {
       somDoPulo.play()
     }
   }
-
+  
   draw() {
     cenario.exibe();
     cenario.move();
-
     vida.draw()
     pontuacao.exibe()
     pontuacao.adicionarPonto()
@@ -60,6 +59,7 @@ class Jogo {
       if (vida.vidas === 0) {
         image(imagemGameOver, width / 2 - 200, height / 3)
         noLoop()
+
       }
     }
   }

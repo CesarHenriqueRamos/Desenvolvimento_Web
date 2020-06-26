@@ -16,7 +16,7 @@ let cenas;
 let telaInicial;
 let botaoGerenciador;
 let vida
-
+let botaoReinicia;
 let cenario;
 let somDoJogo;
 let personagem;
