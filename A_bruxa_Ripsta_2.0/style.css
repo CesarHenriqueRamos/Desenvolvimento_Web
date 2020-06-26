@@ -1,0 +1,19 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+.botao-tela-inicial{
+  background-color: #4A5594;
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+.botao-tela-inicial:hover{
+background-color: #6875bb;
+}
