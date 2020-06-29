@@ -12,7 +12,7 @@
 	spl_autoload_register($autoload);
 
 
-	define('INCLUDE_PATH','http://localhost/Meus_Projetos/Desenvolvimento_Web/Desenvolvimento_Web/Criando_Site_Din%c3%a2mico/');
+	define('INCLUDE_PATH','http://localhost/Meus_Projetos/Desenvolvimento_Web/Desenvolvimento_Web/Sistema_de_gest%c3%a3o_de_clientes/');
 	define('INCLUDE_PATH_PAINEL',INCLUDE_PATH.'painel/');
 
 	define('BASE_DIR_PAINEL',__DIR__.'/painel');
@@ -22,7 +22,7 @@
 	define('HOST','localhost');
 	define('USER','root');
 	define('PASS','');
-	define('DB','saite_dinamico');
+	define('DB','gestor_clientes');
 
 	//Constantes para o painel de controle
 	define('NOME_EMPRESA','RamosTecnolog');

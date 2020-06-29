@@ -1,5 +1,5 @@
 <?php
-    $usuariosOnline = Site::listarUsuaruosOnline();
+    /*$usuariosOnline = Site::listarUsuaruosOnline();
     //visitas totais
     $visitasTotais = MySql::connect()->prepare("SELECT * FROM `tb_admin.visitas`");
     $visitasTotais->execute();
@@ -11,7 +11,7 @@
     //usuarios do painel
     $usuariosPainel = MySql::connect()->prepare("SELECT * FROM `tb_admin.usuarios`");
     $usuariosPainel->execute();
-    $usuariosPainel =  $usuariosPainel->fetchAll();
+    $usuariosPainel =  $usuariosPainel->fetchAll();*/
 ?>
 
             
@@ -19,15 +19,15 @@
             <h2 class="title"><i class="fas fa-home"></i> Painel de Controle - <?php echo NOME_EMPRESA ?></h2>
                 <div class="w33 user marge-right">
                     <h3>Usuarios Online</h3>
-                    <p><?php echo count($usuariosOnline);?></p>
+                    <p>3</p>
                 </div>
                 <div class="w33 visita marge-right">
                     <h3>Total de Visitas</h3>
-                    <p><?php echo $visitasTotais; ?></p>
+                    <p>3</p>
                 </div>
                 <div class="w33 visita-hoje">
                     <h3>Visitas Hoje</h3>
-                    <p><?php echo $visitasHoje ?></p>
+                    <p>3</p>
                 </div>
             </div>
             
@@ -44,18 +44,18 @@
                     </div><!--col-->
                     <div class="clear"></div>
                 </div><!--row-->
-                <?php foreach($usuariosOnline as $key =>$value){?>
+                <?php //foreach($usuariosOnline as $key =>$value){?>
                 
                 <div class="row">
                     <div class="col">
-                        <span><?php echo $value['ip'];?></span>
+                        <span><?php //echo $value['ip'];?></span>
                     </div><!--col-->
                     <div class="col">
-                        <span><?php echo date('d/m/Y H:i:s',strtotime($value['ultima_acao']));?></span>
+                        <span><?php //echo date('d/m/Y H:i:s',strtotime($value['ultima_acao']));?></span>
                     </div><!--col-->
                     <div class="clear"></div>
                 </div><!--row-->
-                <?php } ?>
+                <?php// } ?>
             </div><!--tabela-responciva-->
             </div><!--fim da tabela-->
             <?php
@@ -74,18 +74,18 @@
                     </div><!--col-->
                     <div class="clear"></div>
                 </div><!--row-->
-                <?php foreach($usuariosPainel as $key =>$value){?>
+                <?php //foreach($usuariosPainel as $key =>$value){?>
                 
                 <div class="row">
                     <div class="col">
-                        <span><?php echo $value['user'];?></span>
+                        <span><?php //echo $value['user'];?></span>
                     </div><!--col-->
                     <div class="col">
-                        <span><?php echo pegaCargo($value['cargo']);?></span>
+                        <span><?php //echo pegaCargo($value['cargo']);?></span>
                     </div><!--col-->
                     <div class="clear"></div>
                 </div><!--row-->
-                <?php } ?>
+                <?php //} ?>
             </div><!--tabela-responciva-->
             </div>
          <?php }?>

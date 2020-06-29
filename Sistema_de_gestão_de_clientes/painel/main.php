@@ -50,20 +50,9 @@
                
             </div><!--boo-usuario-->
             <div class="items-menu">
-                    <h2>Cadastro</h2>
-                        <a <?php selecionadoMenu('cadastrar-depoimento'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-depoimento">Cadastro de Depoimento</a>
-                        <a <?php selecionadoMenu('cadastrar-servico'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-servico">Cadastro de Serviço</a>
-                        <a <?php selecionadoMenu('cadastrar-slides'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-slides">Cadastro de Slides</a>
-                    <h2>Gestão</h2>
-                        <a <?php selecionadoMenu('listar-depoimento'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>listar-depoimento">Lista de Depoimento</a>
-                        <a <?php selecionadoMenu('listar-servico'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>listar-servico">Lista de Serviço</a>
-                        <a <?php selecionadoMenu('listar-slides'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>listar-slides">Lista de Slides</a>
-                    <h2>Administrador</h2>
-                        <a <?php selecionadoMenu('editar-usuario'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>editar-usuario">Editar Usuario</a>
-                        <a <?php selecionadoMenu('adiciaonar-usuario'); ?><?php verificaPermissaoMenu(2);?> href="<?php echo INCLUDE_PATH_PAINEL?>adiciaonar-usuario">Adicionar Usuário</a>
-                    <!--<h2>Configuração Geral</h2>
-                        <a <?php selecionadoMenu('editar-configuracao');?> <?php verificaPermissaoMenu(2);?> href="<?php echo INCLUDE_PATH_PAINEL?>editar-configuracao">Editar</a>-->
-            </div><!--itens-menu-->
+                    <h2>Gestão de Clientes</h2>
+                    <a <?php selecionadoMenu('cadastrar-cliente'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-cliente">Cadastrar Cliente</a>
+
         </div>     
         <div class="clear"></div>
     </div>
@@ -72,6 +61,10 @@
 
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+<script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/jquery.mask.js"></script>
 <script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/script.js"></script>
+<script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/jquery.ajaxForm.js"></script>
+<script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/ajax.js"></script>
+<script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/helperMask.js"></script>
 </body>
 </html>
