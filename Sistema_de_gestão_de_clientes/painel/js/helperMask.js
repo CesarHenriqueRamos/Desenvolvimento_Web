@@ -1,7 +1,7 @@
 $(function(){
     $('[name=cpf]').mask('999.999.999-99');
     $('[name=cnpj]').mask('99.999.999/9999-99');
-    $('[name=tipo_cliente]').change(function(){
+    $('[name=tipo]').change(function(){
         var val = $(this).val();
         if(val == 'fisico'){
             $('[name=cpf]').parent().show();

@@ -19,8 +19,25 @@ define('BASE_DIR_PAINEL',__DIR__.'/painel');
 if(Painel::logado() == false){
     die('Você não esta Logado');
 }
-$data['sucesso'] = false;
+$data['sucesso'] = true;
+$data['erros'] = "";
 //codigo comessa aqui
+$nome = $_POST['nome'];
+$email = $_POST['email'];
+$tipo = $_POST['tipo'];
+$cpf = '';
+$cnpj = '';
+if($tipo == 'fisico'){
+    $cpf = $_POST['cpf'];
+}else if($tipo == 'juridico'){
+    $cnpj = $_POST['juridico'];
+}
+if(isset($_FILES['imagem'])){
+    $imagem = $_FILES['imagem'];
+}else{
+    $data['sucesso'] = false;
+    $data['erros'] = 'Imagem Invalida/Vazia';
+}
 die(json_encode($data));
 ?>
 

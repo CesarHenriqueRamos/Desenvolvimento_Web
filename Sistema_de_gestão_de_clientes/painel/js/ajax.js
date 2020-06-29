@@ -12,7 +12,7 @@ $(function(){
             if(data.sucesso){
                 $('.mensagem').prepend('<div class="box-alert sucesso"><i class="fas fa-check"></i> Cliente cadastrado Com Sucesso</div>')
             }else{
-                $('.mensagem').prepend('<div class="box-alert err"><i class="fas fa-check"></i> Erro ao Cadastrar o Cliente</div>')
+                $('.mensagem').prepend('<div class="box-alert err"><i class="fas fa-check"></i> Erro ao Cadastrar o Cliente: '+data.erros+'</div>')
             }
             console.log(data);
         }

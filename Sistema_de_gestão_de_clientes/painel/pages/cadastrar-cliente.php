@@ -19,22 +19,27 @@
 	    }
 		?>
         <div class="box-form">
-            <label for="user">Login do Usuario:</label>
-            <input type="text" name="user" id="user">
-        </div>
-        <div class="box-form">
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="nome">
         </div>
         <div class="box-form">
-            <label for="pass">Senha:</label>
-            <input type="password" name="password" id="pass">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email">
         </div>
         <div class="box-form">
-            <label for="cargo">Cargo:</label>
-            <select name="cargo" id="cargo">
-               
+            <label for="tipo">Cargo:</label>
+            <select name="tipo" id="tipo">
+               <option value="fisico">Fisico</option>
+               <option value="juridico">Juridico</option>
             </select>
+        </div>
+        <div class="box-form">
+            <label for="cpf">CPF:</label>
+            <input type="text" name="cpf" id="cpf">
+        </div>
+        <div style="display:none;" class="box-form">
+            <label for="cnpj">CNPJ:</label>
+            <input type="text" name="cnpj" id="cnpj">
         </div>
         <div class="box-form">
             <label for="img">Imagem:</label>
