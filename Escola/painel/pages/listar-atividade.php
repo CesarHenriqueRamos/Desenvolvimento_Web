@@ -1,5 +1,5 @@
 <?php
-    
+
     $pagineAtual = isset($_GET['pagina'])?(int)$_GET['pagina']: 1;
     $porPagina = 5;
     $atividade = Painel::selectAll("tb_atividade",($pagineAtual -1)*$porPagina,$porPagina);
@@ -37,8 +37,8 @@
                     </div><!--col-->
                     
                     <!--botão de editar-->
-                        <a href="<?php echo INCLUDE_PATH_PAINEL?>atividade-turma?id=<?php echo $value['id']; ?>"><div class="col1 editar"><i class="fas fa-pencil-alt"></i></div><!--col--></a> 
-                                        <!--fim dos botoes-->
+                    <a href="<?php echo INCLUDE_PATH_PAINEL?>atividade-turma?id=<?php echo $value['id']; ?>"><div class="col1 editar"><i class="fas fa-pencil-alt"></i></div><!--col--></a> 
+                                    <!--fim dos botoes-->
                     <!--botão de editar-->
                     <a href="<?php echo INCLUDE_PATH_PAINEL?>listar-atividade?order=up&id=<?php echo $value['id']; ?>"><div class="col1 local"><i class="fas fa-angle-up"></i></div><!--col--></a> 
                     <!--botão de deletar-->                    

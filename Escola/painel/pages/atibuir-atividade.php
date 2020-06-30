@@ -30,7 +30,8 @@ $atividade= Painel::selectAll('tb_atividade');
         }     
 	    }
 		?>
-        
+        <div class="box-form"> 
+        <label for="">Turma:</label>
         <select name="id_turma" id="">
         <?php
         foreach($turma as $key => $value){ ?>
@@ -38,6 +39,9 @@ $atividade= Painel::selectAll('tb_atividade');
             <option value="<?php echo $value['id'];?>"><?php echo $value['nome'];?></option>
         <?php } ?>
         </select>
+        </div>
+        <div class="box-form">
+        <label for="">Materia:</label> 
         <select name="id_materia" id="">
         <?php
         foreach($materia as $key => $value){ ?>
@@ -45,6 +49,9 @@ $atividade= Painel::selectAll('tb_atividade');
             <option value="<?php echo $value['id'];?>"><?php echo $value['nome'];?></option>
         <?php } ?>
         </select>
+        </div>
+        <div class="box-form">
+        <label for="">Atividade:</label> 
         <select name="id_atividade" id="">
         <?php
         foreach($atividade as $key => $value){ ?>
@@ -52,6 +59,7 @@ $atividade= Painel::selectAll('tb_atividade');
             <option value="<?php echo $value['id'];?>"><?php echo $value['titulo'];?></option>
         <?php } ?>
         </select>
+        </div>
         <div class="box-form"> 
             <input type="hidden" name="order_id" value="0">        
             <input type="hidden" name="nome_tabela" value="tb_atividade_turma">        

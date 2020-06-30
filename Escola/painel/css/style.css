@@ -104,6 +104,10 @@ input[type=file]{
     font-size: 14px;
     border-radius: 20px;
 }
+.excluir{
+    background-color: red;
+    color: white;
+}
 .err{
     position: fixed;
     right: 20px;

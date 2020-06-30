@@ -24,13 +24,15 @@
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="nome">
         </div>
+        <div class="box-form">
+            <label for="nome">Turma:</label>
         <select name="id_turma" id="">
         <?php
         foreach($turma as $key => $value){?>
             <option value="<?php echo $value['id'];?>"><?php echo $value['nome'];?></option>
         <?php } ?>
         </select>
-        
+        </div>
         <div class="box-form"> 
             <input type="hidden" name="order_id" value="0">     
             <input type="hidden" name="nome_tabela" value="tb_aluno">        
