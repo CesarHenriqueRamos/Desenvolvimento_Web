@@ -1,6 +1,6 @@
 <?php include('config.php'); ?>
-<?php Site::updateUsuarioOnline(); ?>
-<?php Site::contador();?>
+<?php// Site::updateUsuarioOnline(); ?>
+<?php// Site::contador();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

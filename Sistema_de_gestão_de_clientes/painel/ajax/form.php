@@ -1,42 +1,59 @@
 <?php
-sleep(2);
-session_start();
-date_default_timezone_set('America/Sao_Paulo');
-$autoload = function($class){
-    if($class == 'Email'){
-        require_once('classes/phpmailer/PHPMailerAutoLoad.php');
-    }
-    include('../../classes/'.$class.'.php');
-};
 
-spl_autoload_register($autoload);
+include('../../constante.php');
 
-
-define('INCLUDE_PATH','http://localhost/Meus_Projetos/Desenvolvimento_Web/Desenvolvimento_Web/Sistema_de_gest%c3%a3o_de_clientes/');
-define('INCLUDE_PATH_PAINEL',INCLUDE_PATH.'painel/');
-
-define('BASE_DIR_PAINEL',__DIR__.'/painel');
 if(Painel::logado() == false){
     die('Você não esta Logado');
 }
 $data['sucesso'] = true;
-$data['erros'] = "";
+$data['erros'] = "Atenção: Dados Vazio não São Permitidos";
 //codigo comessa aqui
 $nome = $_POST['nome'];
 $email = $_POST['email'];
 $tipo = $_POST['tipo'];
+$imagem = "";
 $cpf = '';
 $cnpj = '';
 if($tipo == 'fisico'){
-    $cpf = $_POST['cpf'];
+    $dado = $_POST['cpf'];
 }else if($tipo == 'juridico'){
-    $cnpj = $_POST['juridico'];
+    $dado = $_POST['cnpj'];
 }
+if($nome == ''){
+    $data['sucesso'] = false;
+    $data['erros'] ;
+}else if($email == ''){
+    $data['sucesso'] = false;
+    $data['erros'] ;
+}else if($tipo == ''){
+    $data['sucesso'] = false;
+    $data['erros'] ;
+}else if($dado == ''){
+    $data['sucesso'] = false;
+    $data['erros'] ;
+}
+
 if(isset($_FILES['imagem'])){
-    $imagem = $_FILES['imagem'];
+    if(Painel::imagemValida($_FILES['imagem'])){
+       $imagem = $_FILES['imagem']; 
+    }else{
+        $imagem = "";
+        $data['sucesso'] = false;
+    }
+    
 }else{
     $data['sucesso'] = false;
     $data['erros'] = 'Imagem Invalida/Vazia';
+}
+if($data['sucesso']){
+    //cadastrar
+    if(is_array($imagem)){
+        $imagem = Painel::uploadFile($imagem);
+    }
+    $arr = [$nome,$email,$tipo,$dado,$imagem];
+    $sql = MySql::connect()->prepare("INSERT INTO `tb_admin.clientes` VALUES (null,?,?,?,?,?)");
+    $sql->execute(array($nome,$email,$tipo,$dado,$imagem));
+    die(json_encode($data));
 }
 die(json_encode($data));
 ?>

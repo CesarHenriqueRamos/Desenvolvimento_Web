@@ -1,7 +1,7 @@
 <?php
     class Site{
         
-        public static function updateUsuarioOnline(){
+        /*public static function updateUsuarioOnline(){
             if(isset($_SESSION['online'])){
                 $token = $_SESSION['online'];
                 $horaAtual = date('Y-m-d H:i:s');
@@ -43,6 +43,6 @@
                 $sql = MySql::connect()->prepare("INSERT INTO `tb_admin.visitas` VALUE (null,?,?)");
                 $sql->execute(array($_SERVER['REMOTE_ADDR'],date('Y-m-d')));
             }
-        }
+        }*/
     }
 ?>

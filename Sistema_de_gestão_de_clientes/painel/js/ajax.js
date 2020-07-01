@@ -11,10 +11,11 @@ $(function(){
             $('.box-alert').remove();
             if(data.sucesso){
                 $('.mensagem').prepend('<div class="box-alert sucesso"><i class="fas fa-check"></i> Cliente cadastrado Com Sucesso</div>')
+                $('.ajax')[0].reset();
             }else{
-                $('.mensagem').prepend('<div class="box-alert err"><i class="fas fa-check"></i> Erro ao Cadastrar o Cliente: '+data.erros+'</div>')
+                $('.mensagem').prepend('<div class="box-alert err"><i class="fas fa-check"></i>'+data.erros+'</div>')
             }
-            console.log(data);
+            console.log(data_info);
         }
     })
 });

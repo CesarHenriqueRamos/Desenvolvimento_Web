@@ -52,7 +52,7 @@
             <div class="items-menu">
                     <h2>Gestão de Clientes</h2>
                     <a <?php selecionadoMenu('cadastrar-cliente'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-cliente">Cadastrar Cliente</a>
-
+                    <a <?php selecionadoMenu('gerenciar-cliente'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>gerenciar-cliente">Gerenciar Cliente</a>
         </div>     
         <div class="clear"></div>
     </div>

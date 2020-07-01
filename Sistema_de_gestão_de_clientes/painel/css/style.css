@@ -384,9 +384,47 @@ form#editar-usuario label{
 .mini{
     width: 60px;
 }
+/*pagina gerenciar Clientes**/
+.box-single-wraper{
+    width: 33.3%;
+    float: left;
+    padding: 20px;
+}
+.box-single{
+    width: 100%;
+    border: 1px solid #CCC;
+    min-height: 230px;
+}
+.box-top{
+    text-align: center;
+    color: #CCC;
+    padding: 8px 0;
+    border-bottom: 1px solid #CCC;
+}
+.box-body{
+    padding: 10px;
+}
+.box-body p{
+    font-size: 12px;
+    color:black;
+}
+.botao{
+    padding-top: 10px;
+    width: 100%;
+}
+.margem-botao{
+    margin: 10px 0;
+    float: left;
+    width: 100%;
+}
+
 @media screen and ( max-width:1200px){
     .box-container .w33{
         height: 100px;
+    }
+    .box-single-wraper{
+        width: 100%;
+        min-height: 0;
     }
 }
 @media screen and (max-width:768px){
