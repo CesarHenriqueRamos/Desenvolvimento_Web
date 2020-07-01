@@ -10,12 +10,24 @@ $(function(){
             $('.ajax').find('input[type=submit]').removeAttr('disabled');
             $('.box-alert').remove();
             if(data.sucesso){
-                $('.mensagem').prepend('<div class="box-alert sucesso"><i class="fas fa-check"></i> Cliente cadastrado Com Sucesso</div>')
+                $('.mensagem').prepend('<div class="box-alert sucesso"><i class="fas fa-check"></i> '+data.mensagem+'</div>')
                 $('.ajax')[0].reset();
             }else{
-                $('.mensagem').prepend('<div class="box-alert err"><i class="fas fa-check"></i>'+data.erros+'</div>')
+                $('.mensagem').prepend('<div class="box-alert err"><i class="fas fa-check"></i> '+data.erros+'</div>')
             }
-            console.log(data_info);
+           
         }
     })
+    $('.btn.delete').click(function(e){
+		e.preventDefault();
+		var item_id = $(this).attr('item_id');
+		var el = $(this).parent().parent().parent().parent();
+		$.ajax({
+			url:include_path+'/ajax/forms.php',
+			data:{id:item_id,tipo_acao:'deletar_cliente'},
+			method:'post'
+		}).done(function(){
+			el.fadeOut();	
+		})
+	})
 });

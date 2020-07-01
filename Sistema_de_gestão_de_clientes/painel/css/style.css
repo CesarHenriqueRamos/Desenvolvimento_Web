@@ -393,13 +393,23 @@ form#editar-usuario label{
 .box-single{
     width: 100%;
     border: 1px solid #CCC;
-    min-height: 230px;
+    min-height: 280px;
 }
 .box-top{
     text-align: center;
+    
     color: #CCC;
     padding: 8px 0;
     border-bottom: 1px solid #CCC;
+}
+.box-top h2{
+      font-size: 50px; 
+}
+.box-top img{
+    max-width: 120px;
+    max-height: 70px;
+    margin: 0 auto;
+    display: block;
 }
 .box-body{
     padding: 10px;

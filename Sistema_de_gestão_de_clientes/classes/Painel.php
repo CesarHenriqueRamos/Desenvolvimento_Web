@@ -5,6 +5,14 @@ class Painel{
         '1' => 'SubAdministrador',
         '2' => 'Administrador'
     ];
+    public static function loadJS($files,$page){
+        $url = explode('/',@$_GET['url']);
+        if($page == $url[0]){    
+            foreach($files as $key => $value){
+                echo '<script src="'.INCLUDE_PATH_PAINEL.'js/'.$value.'"></script>';
+            }
+        } 
+    }
     public static function logado(){
         return isset($_SESSION['login'])? true : false;
     }
@@ -144,6 +152,16 @@ class Painel{
         
         return $sql->fetchAll();
    }
+   public static function selectClientes($tabela, $start= null, $end = null){
+    if($start == null && $end == null){
+       $sql = MySql::connect()->prepare("SELECT * FROM `$tabela`"); 
+    }else{
+     $sql = MySql::connect()->prepare("SELECT * FROM `$tabela` ORDER BY order_id ASC LIMIT $start , $end");  
+    }
+     $sql->execute();
+     
+     return $sql->fetchAll();
+}
    public static function deletar($tabela,$id = false){
         if($id == false){
             $sql = MySql::connect()->prepare("DELETE FROM `$tabela`"); 

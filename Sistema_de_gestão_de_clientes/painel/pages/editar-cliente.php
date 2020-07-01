@@ -1,30 +1,25 @@
 <?php verificaPermissaoPagina(2);
-    
+    $id = $_GET['id'];
+    $dado = Painel::select('tb_admin.clientes','id=?',$id);
 ?>
 <div class="box-container w100" 
 
 <?php
     verificaPermissaoMenu(2);
 ?>>
-    <h2 class="title"><i class="fas fa-user-plus"></i> Adicionar Cliente</h2>
+    <h2 class="title"><i class="fas fa-user-plus"></i> Editar Cliente</h2>
     <hr>
     <div class="mensagem"></div>
 
-    <form  action="<?php echo INCLUDE_PATH_PAINEL ?>ajax/form.php" method="post"  enctype="multipart/form-data" class="ajax" >
- 
-	<?php
-        if(isset($_POST['acao'])){
-   echo 'entrou';
-                
-	    }
-		?>
+    <form class="ajax"  action="<?php echo INCLUDE_PATH_PAINEL ?>ajax/form.php" method="post"  enctype="multipart/form-data" class="ajax" >
+
         <div class="box-form">
             <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome">
+            <input type="text" name="nome" id="nome" value="<?php echo $dado['nome'];?>">
         </div>
         <div class="box-form">
             <label for="email">Email:</label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" value="<?php echo $dado['email']?>">
         </div>
         <div class="box-form">
             <label for="tipo">Cargo:</label>
@@ -35,7 +30,7 @@
         </div>
         <div class="box-form">
             <label for="cpf">CPF:</label>
-            <input type="text" name="cpf" id="cpf">
+            <input type="text" name="cpf" id="cpf" value="<?php echo $dado['cpf_cnpj']?>">
         </div>
         <div style="display:none;" class="box-form">
             <label for="cnpj">CNPJ:</label>
@@ -43,14 +38,15 @@
         </div>
         <div class="box-form">
             <label for="img">Imagem:</label>
+            <input type="hidden" name="imagem_atual" value="<?php echo $dado['imagem']?>">
             <input type="file" name="imagem" id="img">
         </div>
         <div class="box-form">            
-            <input type="hidden" name="tipo_acao" value="cadastrar_cliente">            
+            <input type="hidden" name="tipo_acao" value="atualizar_cliente">            
         </div>
         <div class="box-form">            
-            <input type="submit" name="acao" value="Cadastrar">
+            <input type="submit" name="acao" value="Atualizar">
         </div>
+
     </form>
 </div>
-
