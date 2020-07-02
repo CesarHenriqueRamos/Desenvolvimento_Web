@@ -18,7 +18,7 @@ $(function(){
            
         }
     })
-    $('.btn.delete').click(function(e){
+   /* $('.btn.delete').click(function(e){
 		e.preventDefault();
 		var item_id = $(this).attr('item_id');
 		var el = $(this).parent().parent().parent().parent();
@@ -29,5 +29,5 @@ $(function(){
 		}).done(function(){
 			el.fadeOut();	
 		})
-	})
+	})*/
 });
