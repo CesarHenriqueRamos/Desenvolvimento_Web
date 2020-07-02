@@ -11,7 +11,7 @@
     <hr>
     <div class="mensagem"></div>
 
-    <form class="ajax"  action="<?php echo INCLUDE_PATH_PAINEL ?>ajax/form.php" method="post"  enctype="multipart/form-data" >
+    <form class="ajax" atualizar action="<?php echo INCLUDE_PATH_PAINEL ?>ajax/form.php" method="post"  enctype="multipart/form-data" >
 
         <div class="box-form">
             <label for="nome">Nome:</label>
@@ -24,8 +24,8 @@
         <div class="box-form">
             <label for="tipo">Cargo:</label>
             <select name="tipo" id="tipo">
-               <option value="fisico">Fisico</option>
-               <option value="juridico">Juridico</option>
+               <option <?php if($dado['tipo'] == 'fisico') echo 'selected' ?> value="fisico">Fisico</option>
+               <option <?php if($dado['tipo'] == 'juridico') echo 'selected' ?> value="juridico">Juridico</option>
             </select>
         </div>
         <?php if($dado['tipo'] == 'fisico'){?>
@@ -36,7 +36,7 @@
         <?php }else{?>
         <div  class="box-form">
             <label for="cnpj">CNPJ:</label>
-            <input type="text" name="cnpj" id="cnpj">
+            <input type="text" name="cnpj" id="cnpj" value="<?php echo $dado['cpf_cnpj']?>>
         </div>
         <?php } ?>
         <div class="box-form">

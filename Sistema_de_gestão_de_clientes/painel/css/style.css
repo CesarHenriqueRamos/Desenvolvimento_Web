@@ -427,7 +427,27 @@ form#editar-usuario label{
     float: left;
     width: 100%;
 }
+.busca input[type=text]{
+    width: calc(100% - 200px);
+    float: left;
+    margin-right: 0;
+    margin-top:10px ;
+}
+.busca input[type=submit]{
+    width: 150px;
+    float: left;
+    margin-right: 0;
 
+}
+.busca-result{
+    margin-top: 10px;
+   
+}
+.busca-result p{
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+}
 @media screen and ( max-width:1200px){
     .box-container .w33{
         height: 100px;

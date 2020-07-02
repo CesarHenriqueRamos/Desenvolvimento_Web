@@ -1,10 +1,35 @@
 <div class="box-container w100">
+    <div class="busca">
+        <h4><i class="fa fa-search"></i> Buscar Cliente</h4>
+        <form action="" method="post">
+            <input type="text" name="busca" id="" placeholder="Procure por: Nome,Email,CPF ou CNPJ">
+            <input type="submit"name="pesquisa" value="Buscar">
+        </form>
+        <div class="clear"></div>
+    </div>
+
+</div>
+<div class="box-container w100">
     <h2 class="title"><i class="far fa-list-alt"></i> Clientes Cadastrados</h2>
     <hr>
-   <div class="boxes">
-       <?php 
-       $clientes = Painel::selectClientes('tb_admin.clientes');
-       foreach($clientes as $key => $value){ ?>
+    
+    <div class="boxes">
+    <?php
+       $query = ""; 
+       if(isset($_POST['pesquisa'])){        
+        $busca = $_POST['busca'];
+        $query = " WHERE nome LIKE '%$busca%' OR email LIKE '%$busca%' OR cpf_cnpj LIKE '%$busca%'";
+       // $clientes = MySql::connect()->prepare("SELECT * FROM `$tabela` $query");
+        }  
+      $sql = MySql::connect()->prepare("SELECT * FROM `tb_admin.clientes` $query");
+       $sql->execute();     
+       $clientes = $sql->fetchAll();
+       foreach($clientes as $key => $value){ 
+        if(isset($_POST['pesquisa'])){
+            echo '<div class="busca-result"><p>Foram Encontrados '.count($clientes).' Resultado</p></div>';   
+        }
+
+    ?>
         <div class="box-single-wraper">
             <div class="box-single">
                 <div class="box-top">
